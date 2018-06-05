@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <!--<script type="text/javascript" src="loggedin.js"></script>-->
+        <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="grouppage.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="grouppage.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <div class="slide" onclick="openSlideMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="name-pic">
+            <div>
+            <div class="username">
+                Hi, <?php echo "$user[2] $user[3]"; ?>
+            </div>
+            <ul>
+                <li>Notification</li>
+                <li>Settings</li>
+                <li>Logout</li>
+            </ul>
+            </div>
+            <img src=<?php echo 'pp/'.$user[11] ?> class="pp"/>
+            </div>
+            
+        </div>
+        <div class="groupname"><span> <?php echo $group_name; ?> </span></div>
+        <ul class="sidebar" id="sidebar">
+            <li onclick="closeSlideMenu()" class="close"><i class="fa fa-close"></i></li>
+            <li class="searcharea"><i class="fa fa-search"></i><input type="text" id="searchfiles" placeholder="Search by name/tag/type"/></li>
+            <li class="nodrop">Profile Settings</li>
+            <li onclick="showfolders()"><i class="fa fa-angle-right" id="1"></i> Group Folders</li>
+            <li class="dropdown noshow" id="folders">
+                <ul> 
+                    <?php echo $str; ?>
+                </ul>
+            </li>
+            <li onclick="showfiles()"><i class="fa fa-angle-right" id="2"></i> All Files</li>
+            <li class="dropdown noshow" id="files">
+                <ul>
+                   <?php echo $fileList; ?>
+                </ul>
+            </li>
+            <li class="nodrop">Open Board</li>
+            <li class="nodrop">Invite Friends</li>
+            <li class="nodrop">Calender</li>
+            <li class="nodrop">TimeOut</li>
+        </ul>
+        <div id="main"> 
+
+            <form enctype="multipart/form-data" class="post" id="post">
+                <textarea placeholder="Type your post here" class="posttext" id="posttext" name="posttext"></textarea>
+                
+                <div class="textside">
+                    <div>
+                        <input type="file" class="filebtn" id="filebtn" name="file"/>
+                        <div class="tofolder">
+                            <button class="tofolderbtn">Add to folder</button>
+                            <input type="text" class="tofoldertext" id="tofoldertext" name="folder"/>
+                        </div>
+                    </div>
+                    <div class="tag">
+                        <button class="tagbtn">Add Tags</button>
+                        <input type="text" class="tagtext" id="tagtext" name="tagtext"/>
+                    </div>
+                    <button type="submit" class="postbtn" id="postbtn">Post</button>
+                    <input type="hidden" id="group_id" value="<?php echo $group_id; ?>"/>
+                    <input type="hidden" id="user_id" value="<?php echo $user[0]; ?>"/>
+                    <input type="hidden" id="user_name" value="<?php echo $user[1]; ?>"/>
+                </div>
+            </form>
+
+            <div class="feed" id="feed">
+                <?php echo $feed; ?>
+            </div>
+            <div class="footer">
+                contact us
+            </div>
+
+        </div>
+        
+        <div class="chatarea">
+            <div class="chattop">Chat area</div>
+            <ul class="namelist">
+               <?php echo $userList; ?>
+            </ul>
+            <div class="chat">
+                <input type="text"/>
+                <button>Send</button>
+             </div>
+        </div>
+
+      </body>
+</html>

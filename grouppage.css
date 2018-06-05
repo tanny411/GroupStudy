@@ -1,0 +1,265 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin:0px 0px 0px 0px;
+    background-color: #dfc6b0;
+    font-size: 14px;
+}
+ul , li{
+    list-style-type: none;
+    padding:0px;
+}
+.header
+{
+    top:0px;
+    width:100%;
+    position:fixed;
+    background-color: #323d4f;
+    height:170px;
+}
+.groupname{
+    position:fixed;
+    top:170px;
+    height:50px;
+    width:100%;
+    display: table;
+
+    text-align:center;
+    font-size:1.25em;
+    background-color: #816956;
+    color:#260e01;
+}
+.groupname span{
+    display: table-cell;
+    vertical-align: middle;
+    line-height: normal;
+}
+.footer
+{
+    text-align: center;
+    height:50px;
+    background-color: #323d4f;
+    border-style:solid;
+}
+.header ul{
+    color:#7f9ba7;
+    list-style-type: none;
+    padding-left:0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    font-size: 1.25em;
+    
+    margin-top:20px;
+}
+.header li{
+    display: inline;
+    padding:10px;
+}
+.header li:hover{
+    color:#aec2ca;
+    cursor: pointer;
+    background-color: #557c8d;
+}
+.name-pic{
+    position:absolute;
+    display: flex;
+    top:7%;
+    right:3%;
+}
+.username{
+    color:white;
+    font-size:3em;
+    font-family: 'Bad Script', cursive;
+}
+.pp
+{
+    margin-left:25px;
+    height:120px;
+	width:120px;
+	background-color:#608ea1;
+	padding:10px;
+	box-shadow:3px 2px 5px rgb(46, 43, 43);
+}
+.slide{
+    display:inline-block;
+    color:#7f9ba7;
+    font-size: 36px;
+    padding:15px;
+}
+.slide:hover{
+    color:#aec2ca;
+    cursor: pointer;
+    background-color: #557c8d;
+}
+
+.sidebar{
+    height: calc(100%);
+    width:0px;
+    position:fixed;
+    z-index:1;
+    top:0;
+    left:0;
+
+    margin-top:0px;
+    padding-left:0px;
+    padding-top:0px;
+
+    background-color:#111;
+    opacity:0.9;
+    overflow-x: auto;
+    overflow-y: scroll;
+
+    /*transform: scaleX(0);*/
+    transition:transform 0.5s ease-out;
+}
+  
+.sidebar li{
+    padding:30px 5px 0px 35px;
+    list-style-type:none;
+    color:rgb(159, 201, 223);
+    display:block;
+    transition:0.3s;
+}
+  
+.sidebar li:hover{
+    cursor: pointer;
+    color:#fff;
+}
+.sidebar .close{
+    font-size:2em;
+    padding:15px 20px 0px 250px;
+}
+.sidebar #searchfiles{
+    position:relative;
+    left:30px;
+}
+.sidebar li.searcharea{
+    padding-bottom:15px;
+}
+#main{
+    margin-top: 220px;
+    transition:margin-left 0.5s;
+    padding:20px;
+    width:calc(80% - 40px);
+    text-align: justify;
+}
+.chatarea{
+    background-color:#fff;
+    width:20%;
+    position:fixed;
+    right:0;
+    top:220;
+    height:calc(100% - 220px);
+}
+.chattop{
+    background-color: #4f8297;
+    padding:15px;
+    text-align: center;
+}
+.namelist{
+    height:calc(100% - 115px);
+    overflow-y: auto;
+    padding-left:15px;
+    list-style-type: none;
+    margin-bottom:0px;
+}
+.namelist li{
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.chat{
+    background-color: #a7cada;
+    padding-bottom:15px;
+    padding-top:15px;
+    text-align: center;
+}
+.post{
+    display:grid;
+    grid-template-columns: 520px auto;
+}
+.posttext{
+    height:100px;
+    width:500px;
+    margin-right: 20px;
+}
+.filebtn,.tag
+{
+    padding-bottom: 15px;
+}
+.postbtn{
+    border-style: outset;
+    width:90px;
+    padding:2px;
+}
+.tagbtn{
+    width:90px;
+    padding:2px;
+}
+.postbtn{
+    color:white;
+    background-color:rgb(145, 106, 106);
+    border-color: #a7978b;
+}
+.postbtn:active{
+    background-color:rgb(94, 58, 58);
+}
+.tagtext,.tofoldertext{
+    border-style:none;
+    width:0px;
+    transition: width 0.5s;
+}
+.tofolder{
+    display: inline;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+li.noshow{
+    display:none;
+}
+.dropdown ul, .dropdown li{
+    padding:0px;
+}
+li.dropdown{
+    padding-top:0;
+    padding-bottom: 0;
+}
+.dropdown li{
+    padding:0px;
+    padding-left: 15px;
+    padding-top:10px;
+}
+.collapse{
+    transform:scaleX(1);
+}
+.feed{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.apost{
+    border:solid 1px #928f8f;
+    background-color:rgba(1,1,1,.05);
+    padding:10px;
+    margin-bottom:10px;
+}
+.author{
+    margin:0px;
+}
+.time{
+    font-size: 10px;
+    margin-bottom:10px; 
+}
+.file-folder{
+    font-size: 12px;
+}
+.r8{
+    float:right;
+    margin-right: 20px;
+}
+.newfoldertext{
+    margin-left:5px;
+    width:100px;
+    color:white;
+    background-color: rgba(1,1,1,0);
+    border-width: 1px;
+}
