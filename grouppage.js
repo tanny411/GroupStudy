@@ -118,7 +118,28 @@ $(document).ready(function(){
     $(this).toggleClass('fa-angle-right');
     $(this).toggleClass('fa-angle-down');
   });
+
+  $('.cross').on("click",function(e){
+    var r=confirm('Are you sure you want to delete the post? All associated files will also be deleted.');
+    if(r==true){
+      var id=$(this).parent().attr('id');
+      deletepost(id);
+      $(this).parent().remove();
+    }
+  });
 });
+
+function deletepost(id){
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'deletepost.php', true);
+  xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      $('.feed').prepend(xhr.responseText);
+    }
+  };
+  xhr.send("id="+id);
+}
 
 function search(x,y){
   //y is separator

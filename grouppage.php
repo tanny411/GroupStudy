@@ -50,8 +50,9 @@
 	if($query_run=mysqli_query($con,$query)){
 		while($query_row=mysqli_fetch_assoc($query_run)){
 			
-			$feed.=" <div class=\"apost\">
-			<h3 class=\"author\">".$allusers[$query_row['user_id']]."</h3>
+			$feed.=" <div class=\"apost\" id='".$query_row['id']."'>";
+			if($user[0]==$query_row['user_id'])$feed.="<div class=\"cross\">X</div>";
+			$feed.="<h3 class=\"author\">".$allusers[$query_row['user_id']]."</h3>
 			<div class=\"time\">".$query_row['timestamp']."</div>
 			<div class=\"aposttext\">".$query_row['post']."</div>
 			<div class=\"file-folder\">".$query_row['file_name']." in ".$query_row['folder']."</div>

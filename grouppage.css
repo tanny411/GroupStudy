@@ -300,3 +300,21 @@ li.dropdown{
 .searchresults ul{
     background-color: #ffffff33;
 }
+.cross{
+    float:right;
+    height:15px;
+    width:15px;
+    text-align: center;
+    padding:2px;
+}
+.cross:hover{
+    background-color: rgb(56, 44, 44);
+    color:white;
+    cursor: pointer;
+}
+.cross:active{
+    background-color: rgb(138, 13, 13);
+    font-size:20px;
+    height:25px;
+    width:25px;
+}

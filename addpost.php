@@ -25,7 +25,7 @@ if(isset($_POST['task']) && $_POST['task']=='addpost' )
     if (isset($_FILES['file']) && !empty($_FILES['file']) && !empty($_FILES['file']['name']))
     {
         $file= $_FILES['file']['name'];
-        $target_file = "C:/xampp/htdocs/GroupStudy/GroupProject/files/" . basename($file);
+        $target_file = "C:/xampp/htdocs/GroupStudy/GroupProject/files/" .$groupid.'_'. basename($file);
         $ext=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         
         //echo $file;
@@ -38,7 +38,7 @@ if(isset($_POST['task']) && $_POST['task']=='addpost' )
             $ok="umm";
         }
         else if(is_uploaded_file($_FILES['file']['tmp_name']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
-           if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) 
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) 
             {
                 $ok="OK";
             }
