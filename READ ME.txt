@@ -36,3 +36,4 @@ grouppage.js
 
 addpost.php
 addfolder.php
+searchfiles.php

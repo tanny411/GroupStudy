@@ -12,12 +12,14 @@
             <div class="slide" onclick="openSlideMenu()">
                 <i class="fa fa-bars"></i>
             </div>
+            <div class="searcharea"><i class="fa fa-search"></i><input type="text" id="searchfiles" placeholder="Search by filename/tag/type"/></div>
             <div class="name-pic">
             <div>
             <div class="username">
                 Hi, <?php echo "$user[2] $user[3]"; ?>
             </div>
             <ul>
+                <li>Home</li>
                 <li>Notification</li>
                 <li>Settings</li>
                 <li>Logout</li>
@@ -30,7 +32,6 @@
         <div class="groupname"><span> <?php echo $group_name; ?> </span></div>
         <ul class="sidebar" id="sidebar">
             <li onclick="closeSlideMenu()" class="close"><i class="fa fa-close"></i></li>
-            <li class="searcharea"><i class="fa fa-search"></i><input type="text" id="searchfiles" placeholder="Search by name/tag/type"/></li>
             <li class="nodrop">Profile Settings</li>
             <li onclick="showfolders()"><i class="fa fa-angle-right" id="1"></i> Group Folders</li>
             <li class="dropdown noshow" id="folders">
@@ -73,9 +74,32 @@
                 </div>
             </form>
 
+            <div class="searchresults hide visuallyhidden"> 
+                <h2 class="heading">Search results</h2>
+                <hr/>
+                <div>
+                    <div class="tab">Tags<i class="fa fa-angle-down r8 drop"></i></div>
+                    <ul id="searchtag"></ul>
+                </div>
+                <div>
+                    <div class="tab">Files<i class="fa fa-angle-down r8 drop"></i></div>
+                    <ul id="searchfile"></ul>
+                </div>
+                <div>
+                    <div class="tab">File Type<i class="fa fa-angle-down r8 drop"></i></div>
+                    <ul id="searchtype"></ul>
+                </div>
+                <div>
+                    <div class="tab">Posts<i class="fa fa-angle-down r8 drop"></i></div>
+                    <ul  id="searchpost"></ul>
+                </div>
+                <hr/>
+            </div>
+
             <div class="feed" id="feed">
                 <?php echo $feed; ?>
             </div>
+
             <div class="footer">
                 contact us
             </div>
