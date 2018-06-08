@@ -106,6 +106,7 @@ $(document).ready(function(){
       search(x,'#'+Math.random()+'#');
     }
     else {
+      clearsearcharea();
       $('.searchresults').addClass('visuallyhidden');
       $('.searchresults').one('transitionend', function(e) {
         $('.searchresults').addClass('hide');
@@ -148,19 +149,32 @@ $(document).ready(function(){
 
   $(document).on("click",".com-cross",function(e){
     var id=$(this).parent().attr('id');
-    deletecomment(id);
-    $(this).parent().remove();
+    var fileid=$(this).parent().parent().parent().parent().attr('id');
+    deletecomment(id,fileid);
+    $('.feed').find('#'+fileid).find('#'+id).remove();
+    if($('.searchresults').find('#'+fileid).find('#'+id).length) 
+      $('.searchresults').find('#'+fileid).find('#'+id).remove();
   });
 
 });
 
-function deletecomment(id){
+function clearsearcharea()
+{
+  document.getElementById('searchfile').innerHTML="";
+  document.getElementById('searchtype').innerHTML="";
+  document.getElementById('searchpost').innerHTML="";
+  document.getElementById('searchtag').innerHTML="";
+}
+
+function deletecomment(id,fileid){
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'deletecomment.php', true);
   xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      $('.comments').prepend(xhr.responseText);
+      $('.feed').find('#'+fileid).find('.comments').prepend(xhr.responseText);
+      if($('.searchresults').find('#'+fileid).find('.comments').length) 
+      $('.searchresults').find('#'+fileid).find('.comments').prepend(xhr.responseText);
     }
   };
   xhr.send("id="+id);
@@ -172,7 +186,9 @@ function addcomment(groupid,fileid,userid,comment,name){
   xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      $('.comments').prepend(xhr.responseText);
+      $('.feed').find('#'+fileid).find('.comments').prepend(xhr.responseText);
+      if($('.searchresults').find('#'+fileid).find('.comments').length) 
+      $('.searchresults').find('#'+fileid).find('.comments').prepend(xhr.responseText);
     }
   };
   xhr.send("groupid="+groupid+"&fileid="+fileid+"&userid="+userid+"&comment="+comment+"&name="+name);
