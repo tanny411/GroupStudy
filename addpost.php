@@ -96,12 +96,20 @@ if(isset($_POST['task']) && $_POST['task']=='addpost' )
                 if($query_run=mysqli_query($con,$query)){
                     mysqli_data_seek($query_run,0);
                     $row=mysqli_fetch_row($query_run);
-                    echo " <div class=\"apost\">
+
+                    $row[3]=nl2br($row[3]);
+
+                    echo " <div class=\"apost\" id='".$row[0]."'>
+                    <div class=\"cross\">X</div>
                     <h3 class=\"author\">".$username."</h3>
                     <div class=\"time\">".$row[7]."</div>
                     <div class=\"aposttext\">".$row[3]."</div>
+                    <div class=\"commentbtn\">comment</div>
                     <div class=\"file-folder\">".$row[4]." in ".$row[6]."</div>
-                    </div>" ;
+                    <div class=\"comment-list\">
+                    <hr/>
+                    <div class=\"comment-box curr\"><textarea class=\"com-text\"></textarea><button class=\"com-postbtn\">post</button></div>
+                    <div class=\"comments\"></div></div></div></div>";
                 }
             }
             else echo $msg;

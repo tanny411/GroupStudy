@@ -119,7 +119,7 @@ $(document).ready(function(){
     $(this).toggleClass('fa-angle-down');
   });
 
-  $('.cross').on("click",function(e){
+  $(document).on("click",".cross",function(e){
     var r=confirm('Are you sure you want to delete the post? All associated files will also be deleted.');
     if(r==true){
       var id=$(this).parent().attr('id');
@@ -127,7 +127,54 @@ $(document).ready(function(){
       $(this).parent().remove();
     }
   });
+
+  $(document).on("click",".commentbtn",function(e){
+    $(this).next().next('.comment-list').toggle();
+  });
+
+  $(document).on("click",".com-postbtn",function(e){
+    e.preventDefault();
+    var comment=$(this).prev().val();
+    if(comment.length<=0) return;
+    var fileid=$(this).parent('.curr').parent('.comment-list').parent('.apost').attr('id');
+    var groupid=$('#group_id').val();
+    var userid=$('#user_id').val();
+    var name=$('#user_name').val();
+    $(this).prev().val("");
+    addcomment(groupid,fileid,userid,comment,name);
+  });
+
+  $(document).on("click",".com-cross",function(e){
+    var id=$(this).parent().attr('id');
+    deletecomment(id);
+    $(this).parent().remove();
+  });
+
 });
+
+function deletecomment(id){
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'deletecomment.php', true);
+  xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      $('.comments').prepend(xhr.responseText);
+    }
+  };
+  xhr.send("id="+id);
+}
+
+function addcomment(groupid,fileid,userid,comment,name){
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'addcomment.php', true);
+  xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      $('.comments').prepend(xhr.responseText);
+    }
+  };
+  xhr.send("groupid="+groupid+"&fileid="+fileid+"&userid="+userid+"&comment="+comment+"&name="+name);
+}
 
 function deletepost(id){
   var xhr = new XMLHttpRequest();
@@ -141,7 +188,7 @@ function deletepost(id){
   xhr.send("id="+id);
 }
 
-function search(x,y){
+function search(x,y){///work here
   //y is separator
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'searchfiles.php', true);
@@ -150,13 +197,39 @@ function search(x,y){
     if (xhr.readyState == 4 && xhr.status == 200) {
       x=xhr.responseText;
       arr=x.split(y);
-      document.getElementById('searchtag').innerHTML=arr[0];
       document.getElementById('searchfile').innerHTML=arr[1];
       document.getElementById('searchtype').innerHTML=arr[2];
-      document.getElementById('searchpost').innerHTML=arr[3];
+      
+      if(arr[0]=="<i>No files found</i>")
+        document.getElementById('searchtag').innerHTML=arr[0];
+      else{
+        p = arr[0].split(' ');
+        var temp="";
+        for(var i=0;i<p.length-1;i++)
+        {
+          temp+="<div class=\"apost\" id='"+p[i]+"'>";
+          temp+=document.getElementById(p[i].toString()).innerHTML;
+          temp+="</div>";
+        }
+        document.getElementById('searchtag').innerHTML=temp;
+      }
+
+      if(arr[3]=="<i>No files found</i>")
+        document.getElementById('searchpost').innerHTML=arr[3];
+      else{
+        p = arr[3].split(' ');
+        var temp="";
+        for(var i=0;i<p.length-1;i++)
+        {
+          temp+="<div class=\"apost\" id='"+p[i]+"'>";
+          temp+=document.getElementById(p[i].toString()).innerHTML;
+          temp+="</div>";
+        }
+        document.getElementById('searchpost').innerHTML=temp;
+      }
     }
   };
-  xhr.send("x="+x+"&groupid="+document.getElementById('group_id').value+"&rand="+y);
+  xhr.send("x="+x+"&groupid="+document.getElementById('group_id').value+"&userid="+document.getElementById('user_id').value+"&rand="+y);
 }
 
 function addfolderphp(folder,parent)
@@ -176,7 +249,6 @@ window.onload = function () {
     event.preventDefault();
 
     if(document.getElementById('posttext').value=="" && document.getElementById('filebtn').value=="") return;
-
     var formData = new FormData(form);
     formData.append('task', 'addpost');
     formData.append('userid', document.getElementById('user_id').value);

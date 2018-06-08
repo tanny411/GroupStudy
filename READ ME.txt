@@ -38,3 +38,6 @@ addpost.php
 addfolder.php
 searchfiles.php
 deletepost.php
+
+addcomment.php
+deletecomment.php

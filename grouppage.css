@@ -300,21 +300,51 @@ li.dropdown{
 .searchresults ul{
     background-color: #ffffff33;
 }
-.cross{
+.comment-list{
+    display:none;
+}
+.cross , .com-cross{
     float:right;
     height:15px;
     width:15px;
     text-align: center;
     padding:2px;
 }
-.cross:hover{
+.cross:hover, .com-cross:hover{
     background-color: rgb(56, 44, 44);
     color:white;
     cursor: pointer;
 }
-.cross:active{
+.cross:active, .com-cross:active{
     background-color: rgb(138, 13, 13);
     font-size:20px;
     height:25px;
     width:25px;
+}
+.commentbtn{
+    float:right;
+    color:rgb(12, 54, 82);
+}
+.commentbtn:hover{
+    text-align: right;
+    color:rgb(23, 95, 143);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.comment-box{
+    border:solid 1px #928f8f;
+    background-color:rgba(1,1,1,.05);
+    padding:2px;
+    margin-top:10px;
+    font-size: 12px;
+}
+.curr{
+    padding:5px;
+}
+.comment-box textarea{
+    width:89%;
+}
+.comment-box button{
+    width:10%;
+    float:right;
 }
