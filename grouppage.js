@@ -125,6 +125,8 @@ $(document).ready(function(){
       var id=$(this).parent().attr('id');
       deletepost(id);
       $(this).parent().remove();
+      var x=document.getElementById(id);
+      if(x!=null) x.remove();
     }
   });
 
