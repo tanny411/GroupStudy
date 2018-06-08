@@ -126,8 +126,9 @@ $(document).ready(function(){
       var id=$(this).parent().attr('id');
       deletepost(id);
       $(this).parent().remove();
-      var x=document.getElementById(id);
-      if(x!=null) x.remove();
+      //for tag and post in search area if available
+      if(document.getElementById(id)!=null) document.getElementById(id).remove();
+      if(document.getElementById(id)!=null) document.getElementById(id).remove();
     }
   });
 
@@ -152,8 +153,10 @@ $(document).ready(function(){
     var fileid=$(this).parent().parent().parent().parent().attr('id');
     deletecomment(id,fileid);
     $('.feed').find('#'+fileid).find('#'+id).remove();
-    if($('.searchresults').find('#'+fileid).find('#'+id).length) 
-      $('.searchresults').find('#'+fileid).find('#'+id).remove();
+    if($('.searchresults').find("#searchpost").find('#'+fileid).find('#'+id).length) 
+    $('.searchresults').find("#searchpost").find('#'+fileid).find('#'+id).remove();
+    if($('.searchresults').find("#searchtag").find('#'+fileid).find('#'+id).length) 
+    $('.searchresults').find("#searchtag").find('#'+fileid).find('#'+id).remove();
   });
 
 });
@@ -173,8 +176,10 @@ function deletecomment(id,fileid){
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
       $('.feed').find('#'+fileid).find('.comments').prepend(xhr.responseText);
-      if($('.searchresults').find('#'+fileid).find('.comments').length) 
-      $('.searchresults').find('#'+fileid).find('.comments').prepend(xhr.responseText);
+      if($('.searchresults').find("#searchpost").find('#'+fileid).find('.comments').length) 
+      $('.searchresults').find("#searchpost").find('#'+fileid).find('.comments').prepend(xhr.responseText);
+      if($('.searchresults').find("#searchtag").find('#'+fileid).find('.comments').length) 
+      $('.searchresults').find("#searchtag").find('#'+fileid).find('.comments').prepend(xhr.responseText);
     }
   };
   xhr.send("id="+id);
@@ -187,8 +192,10 @@ function addcomment(groupid,fileid,userid,comment,name){
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
       $('.feed').find('#'+fileid).find('.comments').prepend(xhr.responseText);
-      if($('.searchresults').find('#'+fileid).find('.comments').length) 
-      $('.searchresults').find('#'+fileid).find('.comments').prepend(xhr.responseText);
+      if($('.searchresults').find("#searchpost").find('#'+fileid).find('.comments').length) 
+      $('.searchresults').find("#searchpost").find('#'+fileid).find('.comments').prepend(xhr.responseText);
+      if($('.searchresults').find("#searchtag").find('#'+fileid).find('.comments').length) 
+      $('.searchresults').find("#searchtag").find('#'+fileid).find('.comments').prepend(xhr.responseText);
     }
   };
   xhr.send("groupid="+groupid+"&fileid="+fileid+"&userid="+userid+"&comment="+comment+"&name="+name);
