@@ -262,6 +262,11 @@ function addfolderphp(folder,parent)
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'addfolder.php', true);
   xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      $('#folderresponse').html(xhr.responseText);
+    }
+  };
   xhr.send("folder="+folder+"&parent="+parent+"&groupid="+document.getElementById('group_id').value);
 }
 

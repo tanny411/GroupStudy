@@ -348,3 +348,6 @@ li.dropdown{
     width:10%;
     float:right;
 }
+strong{
+    color:red !important;
+}
