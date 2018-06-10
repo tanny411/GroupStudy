@@ -4,8 +4,8 @@
     ob_start();
     session_start();
 
-    $folder = mysqli_real_escape_string($con,trim($_POST['folder']));
-    $parent = mysqli_real_escape_string($con,trim($_POST['parent']));
+    $folder = strtolower(mysqli_real_escape_string($con,trim($_POST['folder'])));
+    $parent = strtolower(mysqli_real_escape_string($con,trim($_POST['parent'])));
     $groupid = mysqli_real_escape_string($con,$_POST['groupid']);
 
     $query="select * from folder where group_id = ".$groupid." and folder='".$folder."'";

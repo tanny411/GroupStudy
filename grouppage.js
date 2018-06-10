@@ -43,7 +43,9 @@ $(document).ready(function(){
   });
 
   $(document).on("click",".addfolder",function(e){
-    $(this).next('ul').show();
+    if($(this).next('ul').length)$(this).next('ul').show();
+    else $(this).next('i').next('ul').show();
+
     $(this).prev('a').children('i').addClass("fa-folder-open");
     $(this).prev('a').children('i').removeClass("fa-folder");
 
@@ -69,7 +71,8 @@ $(document).ready(function(){
     var ul=document.createElement('ul');
     li.appendChild(ul);
 
-    $(this).next('ul').append(li);
+    if($(this).next('ul').length)$(this).next('ul').append(li);
+    else $(this).next('i').next('ul').append(li);
   });
 
   $(document).on("click",".remove",function(e){
@@ -85,6 +88,12 @@ $(document).ready(function(){
           $(this).parent().next('i').removeClass('fa-minus remove');
           $(this).parent().next('i').addClass('fa-plus addfolder');
 
+          var i=document.createElement('i');
+          i.className='fa fa-minus r8 removefolder';
+          $(this).parent().next('i').after(i);
+
+          var y=$(this).parent('a').parent('li').parent('ul').parent('li').children('.removefolder').remove();
+          
           var y=$(this).parent('a').parent('li').parent('ul').parent('li').children('a').text();
           
           $(this).remove();
@@ -159,7 +168,33 @@ $(document).ready(function(){
     $('.searchresults').find("#searchtag").find('#'+fileid).find('#'+id).remove();
   });
 
+  $(document).on("click",".removefolder",function(e){
+    li=$(this).parent('li').parent('ul').children('li').length;
+    pname=$(this).parent('li').parent('ul').parent('li').children('a').text();
+    name=$(this).parent('li').children('a').text();
+    console.log(name);
+    if(li==1 && pname!=' root') {
+      var i=document.createElement('i');
+      i.className='fa fa-minus r8 removefolder';
+      $(this).parent('li').parent('ul').parent('li').children('i').after(i);
+    }
+    $(this).parent('li').remove();
+    folderremove(name,pname,document.getElementById('group_id').value);
+  });
+
 });
+
+function folderremove(name,parent,groupid){
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'deletefolder.php', true);
+  xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      $('#folderresponse').html(xhr.responseText);
+    }
+  };
+  xhr.send("groupid="+groupid+"&folder="+name+"&parent="+parent);
+}
 
 function clearsearcharea()
 {

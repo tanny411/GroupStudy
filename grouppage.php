@@ -102,26 +102,27 @@
 		global $filein;
 		global $folderin;
 				
-		$str.="<ul>";
+		$temp="<ul>";
 
 		if (array_key_exists($folder, $filein)) {
 			foreach($filein[$folder] as $file){
-				$str.="<li><i class=\"fa fa-file-o\"></i> ".$file."</li>";
+				$temp.="<li><i class=\"fa fa-file-o\"></i> ".$file."</li>";
 			}
 		}
 		if (array_key_exists($folder, $folderin))  {
 			foreach($folderin[$folder] as $fol){
-				$str.="<li class=\"dropdown-submenu\"><a class=\"clk\"><i class=\"fa fa-folder\"></i> ".$fol."</a><i class=\"fa fa-plus addfolder r8\"></i>";
-				dfs($fol);
-				$str.="</li>";
+				$temp.="<li class=\"dropdown-submenu\"><a class=\"clk\"><i class=\"fa fa-folder\"></i> ".$fol."</a><i class=\"fa fa-plus addfolder r8\"></i>";
+				$x=dfs($fol);
+				if($x=="<ul></ul>") $temp.="<i class=\"fa fa-minus removefolder r8\"></i>";
+				$temp.=$x."</li>";
 			}
 		}
 
-		$str.="</ul>";
+		$temp.="</ul>";
+		return $temp;
 	}
 
-	dfs("root");
-	$str.="</li>";
+	$str.=dfs("root")."</li>";
 
 	include('grouppage.html');
 ?>
