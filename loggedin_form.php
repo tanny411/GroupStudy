@@ -45,6 +45,7 @@
 					
 					<div class="grpname newtxt"> Group Name: <input type="text" name='grp_name' class="newinp" placeholder="Name your group"/> </div>
 					<div class="about newtxt">Group Description:<textarea name="grp_desc" placeholder="Tell us what your group is about" class="newinp newtextarea"><?php if(isset($desc) && !empty($desc)) echo $desc; ?></textarea> </div>
+					<div class="boardpass newtxt"> Board Password: <input type="password" name='pass' class="newinp" placeholder="Share ONLY with group members"/> </div>
 					<div class="time newtxt">Group Expiration:
 						<select name="time" class="newinp newselect">
 							<option value="1">1 Month</option>

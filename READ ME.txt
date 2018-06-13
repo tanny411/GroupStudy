@@ -41,3 +41,5 @@ deletepost.php
 
 addcomment.php
 deletecomment.php
+
+https://www.twiddla.com/API/Reference.aspx

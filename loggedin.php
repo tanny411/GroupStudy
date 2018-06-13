@@ -9,12 +9,13 @@
 	
 	$msg="Fill these out and click OK to create a new group";
 	
-	if(isset($_POST['grp_name']) && isset($_POST['grp_desc']) && isset($_POST['time']) && isset($_POST['users']) && isset($_POST['emails']))
+	if(isset($_POST['grp_name']) && isset($_POST['grp_desc']) && isset($_POST['time']) && isset($_POST['users']) && isset($_POST['emails']) && isset($_POST['pass']))
 	{
 		$name=mysqli_real_escape_string($con,$_POST['grp_name']);
 		$desc=mysqli_real_escape_string($con,$_POST['grp_desc']);
 		$time=$_POST['time'];
 		$users=mysqli_real_escape_string($con,$_POST['users']);
+		$pass=mysqli_real_escape_string($con,$_POST['pass']);
 		$emails=$_POST['emails'];
 		
 		if(!empty($name) && !empty($desc) && !empty($time))
@@ -25,7 +26,20 @@
 			if($rows>0) $msg="<strong style=\"color:red\";>Such Group Exists</strong>";
 			else
 			{
-				$query="insert into groups values('','".$name."','".$desc."','".$time."')";
+				//php tp php POST request
+				$params = array ('username' => 'tanny411', 'password' => 'aysha','meetingtitle' => $name,'meetingpassword' => $pass);
+
+				$query = http_build_query ($params);
+
+				$contextData['method']='POST';
+				$contextData['content']=$query;
+				$contextData['header']="Content-Type: application/x-www-form-urlencoded\r\n"."Connection: close\r\n"."Content-Length: ".strlen($query)."\r\n";
+				
+				$context = stream_context_create (array ( 'http' => $contextData ));
+
+				$boardId =  file_get_contents ('https://www.twiddla.com/API/CreateMeeting.aspx',false,$context);
+
+				$query="insert into groups values('','".$name."','".$desc."','".$time."' , '".$boardId."','".$pass."')";
 				if($query_run=mysqli_query($con,$query)){
 				
 					//setting session, and putting user-group relations

@@ -131,6 +131,13 @@ ul , li{
     font-size:2em;
     padding:15px 20px 10px 250px;
 }
+.sidebar a, .sidebar a:visited {
+    text-decoration: none;
+    color:rgb(159, 201, 223);
+}
+.sidebar a:hover, .sidebar a:active {
+    color:white;
+}
 #main{
     margin-top: 220px;
     transition:margin-left 0.5s;

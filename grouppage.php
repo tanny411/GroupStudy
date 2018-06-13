@@ -6,12 +6,14 @@
 	if(isset($_SESSION['group_id']) && !empty($_SESSION['group_id'])) $group_id=$_SESSION['group_id'];
 	else header('location: /groupstudy/groupproject/main_page.php');
 
-	//GROUP-NAME
-	$query="select name from groups where id='".$group_id."'";
+	//GROUP-INFOS
+	$query="select * from groups where id='".$group_id."'";
 	if($query_run=mysqli_query($con,$query)){
 		mysqli_data_seek($query_run,0);
 		$row=mysqli_fetch_row($query_run);
-		$group_name=$row[0];
+		$group_name=$row[1];
+		$board_id=$row[4];
+		$board_pass=$row[5];
 	}
 	else die('Server Error');
 
@@ -124,5 +126,6 @@
 
 	$str.=dfs("root")."</li>";
 
+	$link="https://www.twiddla.com/api/start.aspx?sessionid=".$board_id."&guestname=".$user[1]."&password=".$board_pass."&hide=invite,profile,url,welcome";
 	include('grouppage.html');
 ?>

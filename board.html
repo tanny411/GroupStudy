@@ -1,0 +1,38 @@
+<!-- <iframe src="//www.groupboard.com/gb/745482" width="100%" height="600" scrolling="no" frameborder="0"></iframe> -->
+
+<!-- <div style="width: 100%; height: 100%;" id="aww-wrapper">
+ Element in which the whiteboard will be shown
+            – modify style as needed 
+</div>
+<script src="https://awwapp.com/static/widget/js/aww.min.js">
+</script>
+<script type="text/javascript">
+    var aww = new AwwBoard('#aww-wrapper', { apiKey: '391e33ce-16fb-41e9-aced-ad424988deba',autoJoin: true,boardLink: 'ID'
+    });
+</script>
+https://awwapp.com/apis/V1/docs/ -->
+
+<!-- displays only loaded board <div style="width:100%;height:100%;border: 1px solid black;"><div style="position:relative;z-index:10;height:40px;padding-left:4px;width:150px;"><a style="text-decoration:none;color:#CCC;font-size:20px;font-family:Dosis;" href="https://ziteboard.com" target="_blank">Zoom & Move</a></div><iframe seamless="seamless" style="position:relative;width: 100%; height: 100%;top:-40px;" src="https://view.ziteboard.com/shared/62282771782517" frameborder="0" allowfullscreen></iframe></div> -->
+    
+<!-- <iframe onload="oka();" src="board.php?url=https://www.twiddla.com/NewMeeting.aspx" width="100%" height="300px" frameborder="0"></iframe> -->
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <iframe src="https://www.twiddla.com/API/CreateMeeting.aspx" frameborder="0" width="800" height="600"></iframe>
+        <!-- <iframe src="board.php?url=https://www.twiddla.com/NewMeeting.aspx" width="100%" height="800px" frameborder="0"></iframe> -->
+        <script type="text/javascript">  
+            function oka() {
+                var x=document.getElementById('meetingUrlLink').value;
+                console.log(x);
+            }
+            function bol()
+            {
+                var iframeBody = $("iframe").contents().find("body");
+                iframeBody.css("background-color", "blue");
+            }
+        </script>
+
+    </body>
+</html>
