@@ -17,6 +17,7 @@ if(isset($_POST['task']) && $_POST['task']=='addpost' )
     $username=$_POST['username'];
 
     $ok="NOP";
+    $filease=true;
 
     if(isset($_POST['posttext']) && !empty($_POST['posttext']))  $post= $_POST['posttext'];
     if(isset($_POST['tagtext']) && !empty($_POST['tagtext']))  $tags= $_POST['tagtext'];
@@ -43,21 +44,16 @@ if(isset($_POST['task']) && $_POST['task']=='addpost' )
                 $ok="OK";
             }
         }
-    } else $ok="OK";
+    } else {$ok="OK"; $filease=false;}
 
-    if($ok=="NOP") echo $msg;
-    else{
-        if($ok=="umm") {
-            $file="";
-            $ext="";
-            if($post="") $ok="NOP";
-        }
-        if($ok=="OK")
-        {
+    if($ok!="OK") echo "Your post was not uploaded. Try again!";
+    else {
+
             $post=mysqli_real_escape_string($con,$post);
             $tags=mysqli_real_escape_string($con,$tags);
             $tofolder=mysqli_real_escape_string($con,$tofolder);
             $file = preg_replace('~[\\\\/:*?"<>| ]~', '_', $file);
+            if($filease==false) $tofolder="root";
 
             //check if folder exists
             if($tofolder!="root"){
@@ -114,8 +110,6 @@ if(isset($_POST['task']) && $_POST['task']=='addpost' )
             }
             else echo $msg;
         }
-    }
-    
 }
 else header('location: /groupstudy/groupproject/grouppage.php');
 
