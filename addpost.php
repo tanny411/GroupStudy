@@ -106,6 +106,21 @@ if(isset($_POST['task']) && $_POST['task']=='addpost' )
                     <hr/>
                     <div class=\"comment-box curr\"><textarea class=\"com-text\"></textarea><button class=\"com-postbtn\">post</button></div>
                     <div class=\"comments\"></div></div></div></div>";
+
+                    //user-list
+                    $mems=array();
+                    $query="select user_id from user_group where group_id='".$groupid."'";
+                    if(!$query_run=mysqli_query($con,$query)) die();
+                    while($query_row=mysqli_fetch_assoc($query_run)){
+                        $u=$query_row['user_id'];
+                        if($u!=$userid) $mems[]=$u;
+                    }
+                    //create notifications
+                    foreach($mems as $to){
+                        $query="insert into notifs values('','".$groupid."','".$to."','post','".$fileid."','')";
+                        $x=$query_run=mysqli_query($con,$query);
+                        if(!$x) echo 'feck'.mysqli_error($con);
+                    }
                 }
             }
             else echo $msg;

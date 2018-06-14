@@ -26,6 +26,9 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
 
     $query="delete from comments where file_id='".$id."'";
     if(!mysqli_query($con,$query)) die('Server Error');
+
+    $query="delete from notifs where file_id='".$id."'";
+    if(!mysqli_query($con,$query)) die('Server Error');
 }
 else die('Error');
 
