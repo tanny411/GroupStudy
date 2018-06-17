@@ -376,6 +376,7 @@ strong{
     background-color: #557c8dcb;
     transition: .3s ease-in-out;
     box-shadow:2px 2px 2px rgba(46, 43, 43, 0.527);
+    font-size: 12px;
 }
 .notifs ul{
     overflow-x: scroll;
@@ -387,7 +388,8 @@ strong{
     height:0px;
 }
 .nai{
-    display:table;
+    /* display:table; */
+    display:none;
     text-align:center;
     height: 100%;
     width: 100%;
@@ -404,7 +406,6 @@ strong{
     background-color: transparent;
     color:white;
     text-align:right;
-    font-size: 12px;
     margin-bottom: 10px;
 }
 .clearall:hover{
@@ -413,7 +414,6 @@ strong{
 }
 .notifs li{
     color:black;
-    font-size: 14px;
     padding:5px;
     margin-bottom:5px;
     background-color: rgba(255, 255, 255, 0.747);
@@ -437,4 +437,7 @@ strong{
     color:white;
     background-color: rgba(255, 0, 0, 0.616);
     padding: 2px;
+}
+.notif-head{
+    margin-bottom: 2px;
 }

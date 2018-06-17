@@ -128,4 +128,7 @@
 
 	$link="https://www.twiddla.com/api/start.aspx?sessionid=".$board_id."&guestname=".$user[1]."&password=".$board_pass."&hide=invite,profile,url,welcome";
 	include('grouppage.html');
+
+	//NOTIFICATIONS
+	
 ?>
