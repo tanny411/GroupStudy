@@ -18,18 +18,21 @@
             <div class="username">
                 Hi, <?php echo "$user[2] $user[3]"; ?>
             </div>
-            <ul>
-                <li>Home</li>
-                <li>Notification</li>
+            <ul class="navbar">
+                <li><a href="main_page.php">Home</a></li>
                 <li>Settings</li>
-                <li>Logout</li>
+                <li class="notif-btn">Notification<div class="notif-num">88</div></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+            <ul class="notifs notif-collapse">
+                <li class="nai"><span>No new notifications</span></li>
             </ul>
             </div>
             <img src=<?php echo 'pp/'.$user[11] ?> class="pp"/>
             </div>
             
         </div>
-        <div class="groupname"><span> <?php echo $group_name; ?> </span></div>
+        <!-- <div class="groupname"><span> <?php echo $group_name; ?> </span></div> -->
         <ul class="sidebar" id="sidebar">
             <li onclick="closeSlideMenu()" class="close"><i class="fa fa-close"></i></li>
             <li id="folderresponse"></li>

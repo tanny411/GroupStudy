@@ -47,3 +47,5 @@ deletefolder.php
 https://www.twiddla.com/API/Reference.aspx
 
 {board.php,board.html=> not in use, were trialed with}
+
+logout.php

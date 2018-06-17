@@ -182,6 +182,10 @@ $(document).ready(function(){
     folderremove(name,pname,document.getElementById('group_id').value);
   });
 
+  $('.notif-btn').on("click",function(){
+    $('.notifs').toggleClass('notif-collapse');
+    $(this).toggleClass('ase');
+  });
 });
 
 function folderremove(name,parent,groupid){

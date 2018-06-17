@@ -9,6 +9,10 @@ ul , li{
     padding:0px;
     margin:0px;
 }
+a, a:visited ,a:hover,a:active {
+    text-decoration: none;
+    color:inherit;
+}
 .header
 {
     top:0px;
@@ -18,6 +22,7 @@ ul , li{
     height:170px;
 }
 .groupname{
+    z-index: -1;
     position:fixed;
     top:170px;
     height:50px;
@@ -41,7 +46,7 @@ ul , li{
     background-color: #323d4f;
     border-style:solid;
 }
-.header ul{
+.navbar{
     color:#7f9ba7;
     list-style-type: none;
     padding-left:0px;
@@ -50,13 +55,13 @@ ul , li{
 
     font-size: 1.25em;
     
-    margin-top:20px;
+    margin-top:25px;
 }
-.header li{
+.navbar li{
     display: inline;
     padding:10px;
 }
-.header li:hover{
+.navbar li:hover{
     color:#aec2ca;
     cursor: pointer;
     background-color: #557c8d;
@@ -139,19 +144,20 @@ ul , li{
     color:white;
 }
 #main{
-    margin-top: 220px;
+    margin-top: 170px; /*add 50px if you put groupname tab*/
     transition:margin-left 0.5s;
     padding:20px;
     width:calc(80% - 40px);
     text-align: justify;
 }
 .chatarea{
+    z-index: -1;
     background-color:#fff;
     width:20%;
     position:fixed;
     right:0;
-    top:220;
-    height:calc(100% - 220px);
+    top:170px; /*add 50px if you put groupname tab*/
+    height:calc(100% - 170px); /*add here too*/
 }
 .chattop{
     background-color: #4f8297;
@@ -357,4 +363,64 @@ li.dropdown{
 }
 strong{
     color:red !important;
+}
+.notifs{
+    /* box-sizing: border-box; */
+    opacity: 1;
+    float:right;
+    width:350px;
+    height:400px;
+    margin-top:15px;
+    margin-right:10px;
+    padding:10px 10px 5px 10px;
+    border : 1px gray solid;
+    background-color: #557c8dcb;
+    transition: .3s ease-in-out;
+    box-shadow:2px 2px 2px rgba(46, 43, 43, 0.527);
+    overflow-x: scroll;
+}
+.notif-collapse{
+    opacity: 0;
+    height:0px;
+}
+.nai{
+    display:table;
+    text-align:center;
+    height: 98%;
+    width: 98%;
+    background-color: transparent !important;
+    color:rgb(75, 71, 71) !important;
+    font-style: italic;
+}
+.nai span{
+    display: table-cell;
+    vertical-align: middle;
+    line-height: normal;
+}
+.notifs li{
+    color:black;
+    font-size: 14px;
+    padding:5px;
+    margin-bottom:5px;
+    background-color: rgba(255, 255, 255, 0.747);
+    box-shadow:-1px -1px 1px rgba(161, 159, 159, 0.342),2px 2px 2px rgba(46, 43, 43, 0.342);
+}
+.ase{
+    color:#aec2ca;
+    cursor: pointer;
+    background-color: #557c8d;
+}
+.notif-num{
+    display: inline-block;
+    position: relative;
+    top:-10px;
+    left:5px;
+    font-size: 10px;
+    text-align: center;
+    min-width:15px;
+    min-height:15px;
+    border-radius: 50%;
+    color:white;
+    background-color: rgba(255, 0, 0, 0.616);
+    padding: 2px;
 }
