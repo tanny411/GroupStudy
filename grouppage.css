@@ -441,3 +441,18 @@ strong{
 .notif-head{
     margin-bottom: 2px;
 }
+.notif-del{
+    float:right !important;
+    width:15px;
+    text-align: center;
+    color:black;
+    border: 1px gray solid;
+}
+.notif-del:hover{
+    background-color: black;
+    color:white;
+    cursor: pointer;
+}
+.notif-type{
+    display:none;
+}

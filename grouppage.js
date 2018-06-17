@@ -186,7 +186,29 @@ $(document).ready(function(){
     $('.notifs').toggleClass('notif-collapse');
     $(this).toggleClass('ase');
   });
+
+  notif();
+
 });
+
+function notif(){
+    $('.notif-list').find('li').each(function(){
+      var fileid=$(this).find('.notif-text').text();
+      var type=$(this).find('.notif-type').text();
+      var author=$('#'+fileid.toString()).children(".author").text();
+      var post=$('#'+fileid.toString()).children(".aposttext").text();
+      var tmp="";
+      for(var i=0;i<post.length && i<35;i++){
+          if(post[i]=='\n') break;
+          tmp+=post[i];
+      }
+      if(post.length>35) tmp+="...";
+      post=tmp;
+      var file=$('#'+fileid.toString()).children(".file-folder").text();
+      if(type!="comment") $(this).children('.notif-head').children('b').text(author);
+      $(this).children('.notif-text').html(post+'<br/>'+file);
+    });
+}
 
 function folderremove(name,parent,groupid){
   var xhr = new XMLHttpRequest();

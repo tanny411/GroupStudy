@@ -21,17 +21,20 @@
             <ul class="navbar">
                 <li><a href="main_page.php">Home</a></li>
                 <li>Settings</li>
-                <li class="notif-btn">Notification<div class="notif-num">88</div></li>
+                <li class="notif-btn">Notification<div class="notif-num"><?php echo $notif_num; ?></div></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
             <div class="notifs notif-collapse">
                 <div class="clearall">Clear Notifications</div>
-                <ul>
+                <ul class="notif-list">
                     <div class="nai"><span>No new notifications</span></div>
-                    <li>
-                        <div class="notif-head"># New post from <b>Aysha</b></div>
-                        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...<br/> in root
-                    </li>
+                    <!-- <li>
+                        <div class="notif-del">x</div>
+                        <div class="notif-head notif_id_00"># <b>4</b> New post from <b>Aysha</b></div>
+                        <div class="notif-text">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...<br/> in root</div>
+                        <div class="notif-type">post</div>
+                    </li>  -->
+                    <?php echo $notif_str; ?>
                 </ul>
             </div>
             </div>

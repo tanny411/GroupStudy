@@ -127,8 +127,22 @@
 	$str.=dfs("root")."</li>";
 
 	$link="https://www.twiddla.com/api/start.aspx?sessionid=".$board_id."&guestname=".$user[1]."&password=".$board_pass."&hide=invite,profile,url,welcome";
-	include('grouppage.html');
 
 	//NOTIFICATIONS
-	
+	$notif_num="100";
+	$query="select id,type,file_id,com_no from notifs where group_id='".$group_id."' and user_id='".$user[0]."'";
+	if($query_run=mysqli_query($con,$query)){
+		$notif_num=mysqli_num_rows($query_run);
+		$notif_str="";
+		while($query_row=mysqli_fetch_assoc($query_run)){
+			///sentence based on notif type
+			if($query_row['type']=="post") $str_temp="# New post from <b></b>";
+			if($query_row['type']=="comment") $str_temp="# ".$query_row['com_no']." New comment(s) on <b>Your</b> post";
+			if($query_row['type']=="follow") $str_temp="# ".$query_row['com_no']." New comment(s) on <b></b>'s post ";
+			///html
+			$notif_str.="<li><div class=\"notif-del\">x</div><div class=\"notif-head notif_id_".$query_row['id']."\">".$str_temp."</div><div class=\"notif-text\">".$query_row['file_id']."</div><div class=\"notif-type\">".$query_row['type']."</div></li>";
+		}
+	}
+
+	include('grouppage.html');
 ?>
