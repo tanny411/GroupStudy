@@ -76,7 +76,7 @@ a, a:visited ,a:hover,a:active {
     color:white;
     font-size:3em;
     font-family: 'Bad Script', cursive;
-    text-align:center;
+    text-align:left;
 }
 .pp
 {
@@ -365,19 +365,22 @@ strong{
     color:red !important;
 }
 .notifs{
-    /* box-sizing: border-box; */
     opacity: 1;
     float:right;
     width:350px;
     height:400px;
     margin-top:15px;
     margin-right:10px;
-    padding:10px 10px 5px 10px;
+    padding:5px 10px 5px 10px;
     border : 1px gray solid;
     background-color: #557c8dcb;
     transition: .3s ease-in-out;
     box-shadow:2px 2px 2px rgba(46, 43, 43, 0.527);
+}
+.notifs ul{
     overflow-x: scroll;
+    height:calc(100% - 17px);
+    width:100%;
 }
 .notif-collapse{
     opacity: 0;
@@ -386,16 +389,27 @@ strong{
 .nai{
     display:table;
     text-align:center;
-    height: 98%;
-    width: 98%;
-    background-color: transparent !important;
-    color:rgb(75, 71, 71) !important;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    color:rgb(75, 71, 71);
     font-style: italic;
 }
 .nai span{
     display: table-cell;
     vertical-align: middle;
     line-height: normal;
+}
+.clearall{
+    background-color: transparent;
+    color:white;
+    text-align:right;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.clearall:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 .notifs li{
     color:black;
