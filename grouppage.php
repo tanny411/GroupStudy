@@ -67,7 +67,7 @@
 
 			$query_row['post']=nl2br($query_row['post']);
 
-			$feed.=" <div class=\"apost\" id='".$query_row['id']."'>";
+			$feed.="<span class=\"anchor\" id=\"jump_".$query_row['id']."\"></span><div class=\"apost\" id='".$query_row['id']."'>";
 			if($user[0]==$query_row['user_id'])$feed.="<div class=\"cross\">X</div>";
 			$feed.="<h3 class=\"author\">".$allusers[$query_row['user_id']]."</h3>
 			<div class=\"time\">".$query_row['timestamp']."</div>
@@ -140,7 +140,7 @@
 			if($query_row['type']=="comment") $str_temp="# ".$query_row['com_no']." New comment(s) on <b>Your</b> post.";
 			if($query_row['type']=="follow") $str_temp="# ".$query_row['com_no']." New comment(s) on <b></b>'s post.";
 			///html
-			$notif_str.="<li><div class=\"notif-del\">x</div><a href=\"#".$query_row['file_id']."\" class=\"see-notif\"><div class=\"notif-head\">".$str_temp."</div><div class=\"notif-text\">".$query_row['file_id']."</div></a><div class=\"notif-type hide\">".$query_row['type']."</div><div class=\"notif-id hide\">".$query_row['id']."</div></li>";
+			$notif_str.="<li><div class=\"notif-del\">x</div><a href=\"#jump_".$query_row['file_id']."\" class=\"see-notif\"><div class=\"notif-head\">".$str_temp."</div><div class=\"notif-text\">".$query_row['file_id']."</div></a><div class=\"notif-type hide\">".$query_row['type']."</div><div class=\"notif-id hide\">".$query_row['id']."</div></li>";
 		}
 	}
 

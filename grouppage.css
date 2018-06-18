@@ -453,3 +453,9 @@ strong{
     color:white;
     cursor: pointer;
 }
+.anchor{
+    display: block;
+    height: 170px; /*same height as header*/
+    margin-top: -170px; /*same height as header*/
+    visibility: hidden;
+  }
