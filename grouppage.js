@@ -159,8 +159,10 @@ $(document).ready(function(){
 
   $(document).on("click",".com-cross",function(e){
     var id=$(this).parent().attr('id');
+    var idnum="";
+    for(var i=4;i<id.length;i++) idnum+=id[i];
     var fileid=$(this).parent().parent().parent().parent().attr('id');
-    deletecomment(id,fileid);
+    deletecomment(idnum,fileid);
     $('.feed').find('#'+fileid).find('#'+id).remove();
     if($('.searchresults').find("#searchpost").find('#'+fileid).find('#'+id).length) 
     $('.searchresults').find("#searchpost").find('#'+fileid).find('#'+id).remove();

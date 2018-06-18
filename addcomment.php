@@ -22,7 +22,7 @@ if(isset($_POST['groupid']) && !empty($_POST['groupid']) && isset($_POST['commen
 
     $row[4]=nl2br($row[4]);
     
-    $response="<div class=\"comment-box\" id=\"".$comid."\"><div class=\"com-cross\">X</div><h4 class=\"author\">".$username."</h4><div class=\"time\">".$row[5]."</div>".$row[4]."</div>";
+    $response="<div class=\"comment-box\" id=\"com_".$comid."\"><div class=\"com-cross\">X</div><h4 class=\"author\">".$username."</h4><div class=\"time\">".$row[5]."</div>".$row[4]."</div>";
 
     echo $response;
 

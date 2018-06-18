@@ -59,7 +59,7 @@
 				while($query_row2=mysqli_fetch_assoc($query_run2)){
 					
 					$query_row2['comment']=nl2br($query_row2['comment']);
-					$comments.="<div class=\"comment-box\" id=\"".$query_row2['id']."\">";
+					$comments.="<div class=\"comment-box\" id=\"com_".$query_row2['id']."\">";
 					if($user[0]==$query_row2['user_id']) $comments.="<div class=\"com-cross\">X</div>";
 					$comments.="<h4 class=\"author\">".$allusers[$query_row2['user_id']]."</h4><div class=\"time\">".$query_row2['timestamp']."</div>".$query_row2['comment']."</div>";
 				}

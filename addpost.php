@@ -95,7 +95,7 @@ if(isset($_POST['task']) && $_POST['task']=='addpost' )
 
                     $row[3]=nl2br($row[3]);
 
-                    echo " <div class=\"apost\" id='".$row[0]."'>
+                    echo "<span class=\"anchor\" id=\"jump_".$row[0]."\"></span><div class=\"apost\" id='".$row[0]."'>
                     <div class=\"cross\">X</div>
                     <h3 class=\"author\">".$username."</h3>
                     <div class=\"time\">".$row[7]."</div>
@@ -118,8 +118,7 @@ if(isset($_POST['task']) && $_POST['task']=='addpost' )
                     //create notifications
                     foreach($mems as $to){
                         $query="insert into notifs values('','".$groupid."','".$to."','post','".$fileid."','')";
-                        $x=$query_run=mysqli_query($con,$query);
-                        if(!$x) echo 'feck'.mysqli_error($con);
+                        $query_run=mysqli_query($con,$query);
                     }
                 }
             }
