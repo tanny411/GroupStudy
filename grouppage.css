@@ -20,6 +20,8 @@ a, a:visited ,a:hover,a:active {
     position:fixed;
     background-color: #323d4f;
     height:170px;
+    position: fixed;
+    z-index: 2;
 }
 .groupname{
     z-index: -1;
@@ -189,6 +191,8 @@ a, a:visited ,a:hover,a:active {
     height:100px;
     width:500px;
     margin-right: 20px;
+    position: relative;
+    z-index: 1;
 }
 .filebtn,.tag
 {
