@@ -136,11 +136,11 @@
 		$notif_str="";
 		while($query_row=mysqli_fetch_assoc($query_run)){
 			///sentence based on notif type
-			if($query_row['type']=="post") $str_temp="# New post from <b></b>";
-			if($query_row['type']=="comment") $str_temp="# ".$query_row['com_no']." New comment(s) on <b>Your</b> post";
-			if($query_row['type']=="follow") $str_temp="# ".$query_row['com_no']." New comment(s) on <b></b>'s post ";
+			if($query_row['type']=="post") $str_temp="# New post from <b></b>.";
+			if($query_row['type']=="comment") $str_temp="# ".$query_row['com_no']." New comment(s) on <b>Your</b> post.";
+			if($query_row['type']=="follow") $str_temp="# ".$query_row['com_no']." New comment(s) on <b></b>'s post.";
 			///html
-			$notif_str.="<li><div class=\"notif-del\">x</div><div class=\"notif-head notif_id_".$query_row['id']."\">".$str_temp."</div><div class=\"notif-text\">".$query_row['file_id']."</div><div class=\"notif-type\">".$query_row['type']."</div></li>";
+			$notif_str.="<li><div class=\"notif-del\">x</div><a href=\"#".$query_row['file_id']."\" class=\"see-notif\"><div class=\"notif-head\">".$str_temp."</div><div class=\"notif-text\">".$query_row['file_id']."</div></a><div class=\"notif-type hide\">".$query_row['type']."</div><div class=\"notif-id hide\">".$query_row['id']."</div></li>";
 		}
 	}
 

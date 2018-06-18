@@ -189,9 +189,77 @@ $(document).ready(function(){
 
   notif();
 
+  $('.notif-del').on("click",function(){
+    fe_deletenotif($(this));
+  });
+
+  $('.see-notif').on("click",function(){
+    fe_deletenotif($(this));
+  });
+
+  $('.clearall').on("click",function(){
+
+    if($('.notif-num').text()==0) return;
+
+    $('.notif-list').find('li').each(function(){
+      $(this).remove();
+    });
+
+    $('.notif-num').text(0);
+    $('.notif-num').fadeTo(100,0);
+    
+    $('.nai').show();
+
+    deleteAllnotif($('#group_id').val(),$('#user_id').val());
+  });
+
 });
 
+function fe_deletenotif(obj){
+
+  var x=obj.parent('li').children('.notif-id').text();
+
+  obj.parent('li').slideUp(300, function() {
+    $(this).remove();
+    var num=$('.notif-num').text();
+    num--;
+    $('.notif-num').text(num);
+    if(num==0) {
+    $('.notif-num').fadeTo(100,0);
+    $('.nai').show();
+  }
+  });
+  deletenotif(x);
+}
+
+function deletenotif(x){
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'deletenotif.php', true);
+  xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      $('.notif-list').prepend(xhr.responseText);
+    }
+  };
+  xhr.send("id="+x);
+}
+function deleteAllnotif(groupid,userid){
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'deletenotif.php', true);
+  xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      $('.notif-list').prepend(xhr.responseText);
+    }
+  };
+  xhr.send("groupid="+groupid+"&userid="+userid);
+}
 function notif(){
+
+    var num=$('.notif-num').text();
+    if(num==0) $('.notif-num').fadeTo(1,0);
+    else $('.nai').hide();
+
     $('.notif-list').find('li').each(function(){
       var fileid=$(this).find('.notif-text').text();
       var type=$(this).find('.notif-type').text();
@@ -205,8 +273,8 @@ function notif(){
       if(post.length>35) tmp+="...";
       post=tmp;
       var file=$('#'+fileid.toString()).children(".file-folder").text();
-      if(type!="comment") $(this).children('.notif-head').children('b').text(author);
-      $(this).children('.notif-text').html(post+'<br/>'+file);
+      if(type!="comment") $(this).children('a').children('.notif-head').children('b').text(author);
+      $(this).children('a').children('.notif-text').html(post+'<br/>'+file);
     });
 }
 
