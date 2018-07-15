@@ -75,7 +75,6 @@
 			<div class=\"commentbtn\">comment</div>
 			<div class=\"file-folder\">".$query_row['file_name']." in ".$query_row['folder']."</div>";
 			$feed.="<div class=\"comment-list\">
-			<hr/>
 			<div class=\"comment-box curr\"><textarea class=\"com-text\"></textarea><button class=\"com-postbtn\">post</button></div>
 			<div class=\"comments\">".$comments."</div></div></div>";
 
