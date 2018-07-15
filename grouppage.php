@@ -19,6 +19,7 @@
 
 	//assoc of all-users id and name
 	$allusers[$user[0]]=$user[1];
+	$html_list=""; //not in use
 	//USER-LIST-CHAT
 	$userList="";
 	$query="select user_id from user_group where group_id='".$group_id."'";
@@ -34,6 +35,7 @@
 				$userList=$userList."<li>".$name."</li>";
 				//assoc save
 				$allusers[$id]=$name;
+				$html_list.="<input type=\"hidden\" name=\"allusers[".$id."]\" value=\"".$name."\">";  //not in use
 			}
 			else die('Server Error');
 		}

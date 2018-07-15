@@ -215,6 +215,34 @@ $(document).ready(function(){
     deleteAllnotif($('#group_id').val(),$('#user_id').val());
   });
 
+  $('#chatsend').on("click",function(){
+
+    var text=document.getElementById("chattext").value;
+    if(text=="") return;
+    document.getElementById("chattext").value="";
+
+    var xhr = new XMLHttpRequest();
+    
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        document.getElementById('chatlog').innerHTML = xhr.responseText;
+        document.getElementById("chatlog").scrollTop = document.getElementById("chatlog").scrollHeight;
+      }
+    };
+    xhr.open('GET', 'insert_chat.php?text='+text+"&groupid="+document.getElementById('group_id').value+"&userid="+document.getElementById('user_id').value,true);
+    xhr.send();
+  });
+
+  $.ajaxSetup({
+    cache: false
+  });
+
+  setInterval( function(){ $('#chatlog').load('chat_log.php');}, 2000 );
+  
+ 
+  $('#chatlog').load('chat_log.php');
+  setTimeout(function(){document.getElementById("chatlog").scrollTop = document.getElementById("chatlog").scrollHeight;},100);
+  
 });
 
 function fe_deletenotif(obj){

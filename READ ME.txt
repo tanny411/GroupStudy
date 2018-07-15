@@ -50,3 +50,6 @@ https://www.twiddla.com/API/Reference.aspx
 
 logout.php
 deletenotif.php
+
+insert_chat.php
+chat_log.php

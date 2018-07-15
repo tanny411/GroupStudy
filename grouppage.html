@@ -143,14 +143,16 @@
         
         <div class="chatarea">
             <div class="chattop">Chat area</div>
-            <ul class="namelist">
+            <ul class="chatlist" id="namelist">
                <?php echo $userList; ?>
             </ul>
+            <div class="chatlist" id="chatlog">
+            </div>
             <div class="chat">
-                <input type="text"/>
-                <button>Send</button>
-             </div>
+                <input type="text"  id="chattext"/>
+                <button id="chatsend">Send</button>
+            </div>
         </div>
-
+        <!-- <?php echo $html_list ?> list of assoc of all id->users; find a way to send it to phps through ajax to avoid recalling database-->
       </body>
 </html>
