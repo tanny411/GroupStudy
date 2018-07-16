@@ -238,8 +238,6 @@ $(document).ready(function(){
   });
 
   setInterval( function(){ $('#chatlog').load('chat_log.php');}, 2000 );
-  
- 
   $('#chatlog').load('chat_log.php');
   setTimeout(function(){document.getElementById("chatlog").scrollTop = document.getElementById("chatlog").scrollHeight;},100);
 
@@ -249,24 +247,36 @@ $(document).ready(function(){
     if(offline==true){
       offline=false;
       $('#offline').css("background-color", "green");
-      toggleoffline(Number(offline));
+      toggleoffline(0);
     }
     else{
       offline=true;
       $('#offline').css("background-color", "rgb(207, 15, 15)");
-      toggleoffline(Number(offline));
+      toggleoffline(1);
     }
   });
   
+  setInterval( function(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'namelist.php', true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        x=xhr.responseText;
+        arr=x.split(' ');
+        $('.online').removeClass('online');
+        for(var i=0;i<arr.length-1;i++){
+          $('#user_'+arr[i]).children('.status').addClass('online');
+        }
+      }
+    };
+    xhr.send();
+  } , 2000 );
+
 });
+
 function toggleoffline(val){
   var xhr = new XMLHttpRequest();
   xhr.open('GET', "toggleoffline.php?val="+val, true);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      $('.username').prepend(xhr.responseText);
-    }
-  };
   xhr.send();
 }
 function fe_deletenotif(obj){

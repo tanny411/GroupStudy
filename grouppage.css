@@ -476,3 +476,12 @@ strong{
   #offline:focus{
       outline:none;
   }
+  .online{
+      height: 10px;
+      width:10px;
+      float:right;
+      margin-right: 10px;
+      margin-top:5px;
+      border-radius: 50% 50% 50% 50%;
+      background-color: green;
+  }
