@@ -6,6 +6,10 @@
 	if(isset($_SESSION['group_id']) && !empty($_SESSION['group_id'])) $group_id=$_SESSION['group_id'];
 	else header('location: /groupstudy/groupproject/main_page.php');
 
+	//setting as online
+	$query="update user_group set offline='0' where user_id='".$_SESSION['user_id']."' and group_id='".$_SESSION['group_id']."'";
+	if(!$query_run=mysqli_query($con,$query)) die('Database Error, sorry could not connect');
+	
 	//GROUP-INFOS
 	$query="select * from groups where id='".$group_id."'";
 	if($query_run=mysqli_query($con,$query)){

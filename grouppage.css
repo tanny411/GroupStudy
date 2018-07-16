@@ -461,3 +461,18 @@ strong{
     margin-top: -170px; /*same height as header*/
     visibility: hidden;
   }
+  #offline{
+      height: 17px;
+      width: 17px;
+      float:left;
+      border-radius: 50% 50% 50% 50%;
+      border:black 1px solid;
+      background-color: green;
+  }
+  #offline:hover{
+    height: 20px;
+    width: 20px;
+  }
+  #offline:focus{
+      outline:none;
+  }

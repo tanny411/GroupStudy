@@ -19,10 +19,10 @@
                 Hi, <?php echo "$user[2] $user[3]"; ?>
             </div>
             <ul class="navbar">
-                <li><a href="main_page.php">Home</a></li>
+                <li><a href="offline.php?next=main_page">Home</a></li>
                 <li>Settings</li>
                 <li class="notif-btn">Notification<div class="notif-num"><?php echo $notif_num; ?></div></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><a href="offline.php?next=logout">Logout</a></li>
             </ul>
             <div class="notifs notif-collapse">
                 <div class="clearall">Clear Notifications</div>
@@ -142,9 +142,8 @@
         </div>
         
         <div class="chatarea">
-            <div class="chattop">Chat area</div>
+            <div class="chattop"><button id="offline"></button>Chat area</div>
             <ul class="chatlist" id="namelist">
-               <?php echo $userList; ?>
             </ul>
             <div class="chatlist" id="chatlog">
             </div>

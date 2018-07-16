@@ -53,3 +53,6 @@ deletenotif.php
 
 insert_chat.php
 chat_log.php
+
+offline.php
+toggleoffline.php

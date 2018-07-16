@@ -26,7 +26,7 @@
 			if($rows>0) $msg="<strong style=\"color:red\";>Such Group Exists</strong>";
 			else
 			{
-				//php tp php POST request
+				//php to php POST request
 				$params = array ('username' => 'tanny411', 'password' => 'aysha','meetingtitle' => $name,'meetingpassword' => $pass);
 
 				$query = http_build_query ($params);
@@ -48,8 +48,7 @@
 						mysqli_data_seek($query_run,0);
 						$row=mysqli_fetch_row($query_run);
 						$id=$row[0];
-						$_SESSION['group_id']=$id;
-						$query="insert into user_group values ('".$user[0]."','".$id."')";
+						$query="insert into user_group values ('".$user[0]."','".$id."',0)";
 						$query_run=mysqli_query($con,$query);
 
 						//inviting others
@@ -68,7 +67,7 @@
 						$emails_ara=explode(",",$emails,-1);
 						foreach($emails_ara as $ele) mail($ele,$subject,$body,$header);
 						
-						header('Location: grouppage.php');
+						header('Location: setsession.php?id='.$id);
 					}
 				}
 			}

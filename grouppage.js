@@ -242,9 +242,33 @@ $(document).ready(function(){
  
   $('#chatlog').load('chat_log.php');
   setTimeout(function(){document.getElementById("chatlog").scrollTop = document.getElementById("chatlog").scrollHeight;},100);
+
+  var offline=false;
+
+  $('#offline').on("click",function(){
+    if(offline==true){
+      offline=false;
+      $('#offline').css("background-color", "green");
+      toggleoffline(Number(offline));
+    }
+    else{
+      offline=true;
+      $('#offline').css("background-color", "rgb(207, 15, 15)");
+      toggleoffline(Number(offline));
+    }
+  });
   
 });
-
+function toggleoffline(val){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', "toggleoffline.php?val="+val, true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      $('.username').prepend(xhr.responseText);
+    }
+  };
+  xhr.send();
+}
 function fe_deletenotif(obj){
 
   var x=obj.parent('li').children('.notif-id').text();
