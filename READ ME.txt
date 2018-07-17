@@ -58,3 +58,6 @@ offline.php
 toggleoffline.php
 
 namelist.php //to update showing online or offline
+
+profil_setting.php
+profile_setting_form.html

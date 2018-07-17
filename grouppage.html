@@ -20,7 +20,7 @@
             </div>
             <ul class="navbar">
                 <li><a href="offline.php?next=main_page">Home</a></li>
-                <li>Settings</li>
+                <li><a href="#">Settings</a></li>
                 <li class="notif-btn">Notification<div class="notif-num"><?php echo $notif_num; ?></div></li>
                 <li><a href="offline.php?next=logout">Logout</a></li>
             </ul>
@@ -49,7 +49,7 @@
         <ul class="sidebar" id="sidebar">
             <li onclick="closeSlideMenu()" class="close"><i class="fa fa-close"></i></li>
             <li id="folderresponse"></li>
-            <li class="nodrop">Profile Settings</li>
+            <li class="nodrop"><a href="profile_setting.php?from=group_page">Profile Settings</a></li>
             <li onclick="showfolders()"><i class="fa fa-angle-right" id="1"></i> Group Folders</li>
             <li class="dropdown noshow" id="folders">
                 <ul> 

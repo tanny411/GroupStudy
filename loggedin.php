@@ -1,10 +1,4 @@
 <?php
-	if(isset($_POST['submit']) && !empty($_POST['submit'])) 
-	{
-		session_destroy();
-		header('Location: '.$current_file);
-	}
-
 	$user=getUser();
 	
 	$msg="Fill these out and click OK to create a new group";
