@@ -166,7 +166,7 @@ a, a:visited ,a:hover,a:active {
     text-align: center;
 }
 .chatlist{
-    height:calc((100% - 97px)/2 - 6px);
+    height:calc(100% - 97px - 40px);
     overflow-y: scroll;
     margin:5px 0px 5px 15px;
     list-style-type: none;
@@ -484,4 +484,21 @@ strong{
       margin-top:5px;
       border-radius: 50% 50% 50% 50%;
       background-color: green;
+  }
+  .chatunder{
+      display: grid;
+      grid-template-columns:auto auto;
+  }
+  .chat_switch{
+      text-align: center;
+      background-color: rgb(228, 236, 125);
+      margin: 1px;
+      padding: 3px;
+      cursor: pointer;
+  }
+  .switch_select{
+     background-color: rgb(245, 243, 101);
+  }
+  #chatlog{
+      display:none;
   }

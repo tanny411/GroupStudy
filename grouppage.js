@@ -272,6 +272,18 @@ $(document).ready(function(){
     xhr.send();
   } , 2000 );
 
+  $('.mem').on("click",function(){
+    $('.mem').css("background-color","rgb(245, 243, 101)");
+    $('.msg').css("background-color","rgb(228, 236, 125)");
+    $('#namelist').css("display","block");
+    $('#chatlog').css("display","none");
+  });
+  $('.msg').on("click",function(){
+    $('.msg').css("background-color","rgb(245, 243, 101)");
+    $('.mem').css("background-color","rgb(228, 236, 125)");
+    $('#chatlog').css("display","block");
+    $('#namelist').css("display","none");
+  });
 });
 
 function toggleoffline(val){
