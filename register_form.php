@@ -1,4 +1,5 @@
 <head>
+	<title>GroupStudy</title>
 	<link rel="stylesheet" type="text/css" href="register.css"/>
 	<script type="text/javascript" src="mainjs.js"></script>
 </head>

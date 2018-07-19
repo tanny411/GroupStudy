@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Settings</title>
+		<title>GroupStudy</title>
 		<link rel="stylesheet" type="text/css" href="profile_setting.css"/>
 		<script type="text/javascript" src="mainjs.js"></script>
 	</head>
@@ -45,7 +45,7 @@
 			<div>Profile Picture: <input type="file" accept="image/*" name="pp"/> </div>
 
 			<div>
-				<input type="button" name="cancel" value="Cancel"/>
+				<input type="button" name="cancel" onclick="redirect('<?php echo $to; ?>')" value="Cancel"/>
 				<input type="submit" name="save" value="Save"/>
 			</div>
 			<br/><br/>

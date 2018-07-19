@@ -34,6 +34,7 @@ body{
 	padding:15px;
 	font-weight:bold;
 	color:#242222;
+	text-shadow:1px 1px 1px white,-1px -1px 1px white;
 }
 hr{
 	width:70%;

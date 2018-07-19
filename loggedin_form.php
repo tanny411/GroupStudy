@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<title>GroupStudy</title>
 		<script type="text/javascript" src="loggedin.js"></script>
 		<link rel="stylesheet" type="text/css" href="loggedin.css"/>
 	</head>
