@@ -18,6 +18,10 @@ if(isset($_POST['oldpass']) &&!empty($_POST['oldpass']) && md5(mysqli_real_escap
     $inst=mysqli_real_escape_string($con,$_POST['inst']);
     $country=mysqli_real_escape_string($con,$_POST['country']);
     $gender=mysqli_real_escape_string($con,$_POST['gender']);
+    $aboutme=mysqli_real_escape_string($con,$_POST['aboutme']);
+    $fb=mysqli_real_escape_string($con,$_POST['facebook']);
+    $linkedin=mysqli_real_escape_string($con,$_POST['linkedin']);
+    $git=mysqli_real_escape_string($con,$_POST['github']);
 
     $ok=false;
 
@@ -37,6 +41,11 @@ if(isset($_POST['oldpass']) &&!empty($_POST['oldpass']) && md5(mysqli_real_escap
         if(empty($inst)) $inst=$user[8];
         if(empty($country)) $country=$user[9];
         if(empty($gender)) $gender=$user[7];
+
+        if(empty($aboutme)) $aboutme=$user[12];
+        if(empty($fb)) $fb=$user[13];
+        if(empty($linkedin)) $linkedin=$user[14];
+        if(empty($git)) $git=$user[15];
         
         $pp="defaultpp.jpg";
         ///make image smaller before saving
@@ -50,7 +59,7 @@ if(isset($_POST['oldpass']) &&!empty($_POST['oldpass']) && md5(mysqli_real_escap
             else $pp="defaultpp.jpg";
         }
 
-        $query="update user set Firstname='$fname',Lastname='$lname',PhoneNumber='$pnum',DOB='$dob',Gender='$gender',Institution='$inst',Country='$country',Password='$pass',pic='$pp' where ID=".$user[0];
+        $query="update user set Firstname='$fname',Lastname='$lname',PhoneNumber='$pnum',DOB='$dob',Gender='$gender',Institution='$inst',Country='$country',Password='$pass',pic='$pp',Aboutme='$aboutme',facebook='$fb',linkedin='$linkedin',github='$git' where ID=".$user[0];
         if(!$query_run=mysqli_query($con,$query)) $msg="<strong style=\"color:red\";>There was a problem. Please try again.</strong>"; 
         else header('Location: '.$to);
     }

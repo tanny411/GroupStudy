@@ -64,8 +64,8 @@
 								}
 
 								$pass=md5($pass);
-								$query="insert into user values('','$name','$fname','$lname','$email','$pnum','$dob','$gender','$inst','$country','$pass','$pp')";
-								if(!$query_run=mysqli_query($con,$query)) $msg="<strong style=\"color:red\";>There was a problem. Please try again.</strong>"; 
+								$query="insert into user (Username,Firstname,Lastname,email,PhoneNumber,DOB,Gender,Institution,Country,Password,pic) values('$name','$fname','$lname','$email','$pnum','$dob','$gender','$inst','$country','$pass','$pp')";
+								if(!$query_run=mysqli_query($con,$query)) $msg="<strong style=\"color:red\";>There was a problem. Please try again.</strong>".mysqli_error($con); 
 								else header('Location: registered.html');
 							}
 							else $msg = '<strong style=\"color:red\";>Email Sending Failed<strong/>';

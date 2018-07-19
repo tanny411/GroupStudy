@@ -22,7 +22,12 @@
 			<div>*Confirm Old Password: <input type="password" name="oldpass" placeholder="Confirm Old Password"/></div>
 			<div>First name: <input type="text" name="fname" maxlength="30" value="<?php echo $user[2] ?>" /></div>
 			<div>Last name: <input type="text" name="lname"  maxlength="30" value="<?php echo $user[3] ?>"/></div>
+			<div>About Me: <input type="text" name="aboutme"  maxlength="1000" value="<?php echo $user[12] ?>"/></div>
 			
+			<div>Facebook: <input type="text" name="facebook"  maxlength="1000" value="<?php echo $user[13] ?>"/></div>
+			<div>LinkedIn: <input type="text" name="linkedin"  maxlength="1000" value="<?php echo $user[14] ?>"/></div>
+			<div>Github: <input type="text" name="github"  maxlength="1000" value="<?php echo $user[15] ?>"/></div>
+
 			<div>Phone Number: <input type="number" name="pnum"  value="<?php echo $user[5] ?>"/></div>
 			
 			<div>Date Of Birth: <input type="date" name="dob"  value="<?php echo $user[6] ?>"/></div>
