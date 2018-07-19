@@ -13,7 +13,7 @@
 			<div class="pic">
 				<img src=<?php echo 'pp/'.$user[11]; ?> class="pp"/>
 				<div class="name">
-					<?php echo "$user[2] $user[3] ( $user[1] )"; ?>
+				<a href="profile.php?user=<?php echo $user[1];?>"><?php echo "$user[2] $user[3] ( $user[1] )"; ?></a>
 				</div>
 			</div>
 		</header>
