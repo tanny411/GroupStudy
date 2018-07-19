@@ -36,7 +36,7 @@
 				mysqli_data_seek($query_run2,0);
 				$row=mysqli_fetch_row($query_run2);
 				$name=$row[0];
-				$userList=$userList."<li id=\"user_".$id."\">".$name."<div class=\"status\"></div></li>";
+				$userList=$userList."<li id=\"user_".$id."\"><a href=\"profile.php?user=".$name."\">".$name."</a><div class=\"status\"></div></li>";
 				//assoc save
 				$allusers[$id]=$name;
 				$html_list.="<input type=\"hidden\" name=\"allusers[".$id."]\" value=\"".$name."\">";  //not in use
