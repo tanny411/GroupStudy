@@ -29,4 +29,15 @@ function getUser()
 		return $row;
 	}
 }
+function getsomeUser($name)
+{
+	global $con;
+	$query="select * from user where Username='".$name."'";
+	if($query_run=mysqli_query($con,$query))
+	{
+		mysqli_data_seek($query_run,0);
+		$row=mysqli_fetch_row($query_run);
+		return $row;
+	}
+}
 ?>
