@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GroupStudy</title>
+		<link rel="stylesheet" type="text/css" href="group_setting.css"/>
+		<script type="text/javascript" src="mainjs.js"></script>
+	</head>
+	<body>
+		<img class="backimg" src="groupSetting.jpg"/>
+		<div class="title">Group Settings</div>
+		<div class="back">
+		<div class="error"><?php  echo $msg; ?></div>
+		<hr>
+		<form action="#" method="POST" enctype="multipart/form-data">
+
+			<div> Group Name: <input type="text" name='grp_name' value="<?php echo $row[1]; ?>" readonly/> </div>
+            <div> Group Description:<textarea name="grp_desc"><?php echo $row[2]; ?></textarea> </div>
+            <div> New Board Password: <input type="password" name='pass' placeholder="Type the new password"/> </div>
+            <div> Confirm Board Password: <input type="password" name='repeatpass' placeholder="Confirm new password"/> </div>
+            <div> Current Board Password: <input type="password" name='oldpass' placeholder="Type the old/current password"/> </div>
+            <div>Group Expiration:
+                <select name="time">
+                    <option value="1" <?php echo($row[3]==1?'selected':''); ?> >1 Month</option>
+                    <option value="2" <?php echo($row[3]==2?'selected':''); ?> >2 Months</option>
+                    <option value="3" <?php echo($row[3]==3?'selected':''); ?> >3 Months</option>
+                    <option value="4" <?php echo($row[3]==4?'selected':''); ?> >4 Months</option>
+                    <option value="5" <?php echo($row[3]==5?'selected':''); ?> >5 Months</option>
+                    <option value="6" <?php echo($row[3]==6?'selected':''); ?> >6 Months</option>
+                    <option value="7" <?php echo($row[3]==7?'selected':''); ?> >7 Months</option>
+                    <option value="8" <?php echo($row[3]==8?'selected':''); ?> >8 Months</option>
+                    <option value="9" <?php echo($row[3]==9?'selected':''); ?> >9 Months</option>
+                    <option value="10" <?php echo($row[3]==10?'selected':''); ?> >10 Months</option>
+                    <option value="11" <?php echo($row[3]==11?'selected':''); ?> >11 Months</option>
+                    <option value="12" <?php echo($row[3]==12?'selected':''); ?> >12 Months</option>
+                </select>
+            </div>
+            <br/><br/>
+			<div>
+				<input type="button" name="cancel" onclick="redirect('grouppage.php')" value="Cancel"/>
+				<input type="submit" name="save" value="Save"/>
+			</div>
+			
+		</form>
+		</div>
+	</body>
+</html>

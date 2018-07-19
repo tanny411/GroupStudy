@@ -66,3 +66,7 @@ profile_setting.css
 profile.php
 profile_form.php
 profile.css
+
+group_setting.php
+group_setting.html
+group_setting.css

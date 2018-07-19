@@ -1,0 +1,78 @@
+body{
+	font-family:Verdana;
+}
+.backimg {
+    position:fixed;
+    background-color: white;
+	width:100%;
+	height:auto;
+    opacity:.5;
+    left:-10px;
+	z-index:-1;
+}
+.back{
+	position:relative;
+	top:10px;
+	border:solid;
+	border-color:rgba(0, 0, 0, 0.342);
+	background-color:rgba(25, 0, 65, 0.199);
+	width:50%;
+	left:25%;
+}
+.title{
+	text-align:center;
+	text-shadow:1px 2px 1px rgba(131, 3, 250, 0.555);
+	font-size:40px;
+	letter-spacing:7px;
+	padding:10px;
+}
+.error{
+	text-align:center;
+	padding:15px;
+	font-weight:bold;
+	color:#242222;
+	text-shadow:1px 1px 1px white,-1px -1px 1px white;
+}
+hr{
+	width:70%;
+}
+form{
+	position:relative;
+	left:10%;
+	display:grid;
+	grid-gap:1em;
+	padding:1em;
+	text-shadow:1px 1px 1px rgb(129, 129, 129);
+}
+input, textarea, select{
+	position:relative;
+	right:20%;
+	top:-10px;
+	margin:0px 0px 0px 0px;
+	float:right;
+	width:40%;
+	padding:5px;
+	background: #f1f1f1;
+}
+input:focus{
+	background-color: #ddd;
+	outline:none;
+}
+input[type=button],[type=submit] {
+	position:relative;
+	right:25%;
+	top:30%;
+	width:30%;
+	background-color: rgb(66, 37, 146);
+	color: white;
+	padding: 15px 70px;
+	margin: 8px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.9;
+	border-radius:7px;
+	box-shadow:2px 2px 2px gray;
+}
+input[type=button]:hover,[type=submit]:hover {
+	opacity:1;
+}
