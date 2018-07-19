@@ -16,7 +16,7 @@
 				</div>
 			</div>
 		</header>
-		<a href="profile_setting.php?from=main_page" class="top-btn setting">Settings</a>
+		<a href="profile_setting.php?from=main_page.php" class="top-btn setting">Settings</a>
 		<a href="logout.php" class="top-btn logout">Logout</a>
 		<div class="btn">
 			<div class="a"><input type="button" onclick="oldgroup();" class="oldgroup" value="Enter existing group"/></div>
