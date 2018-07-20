@@ -75,3 +75,5 @@ invite.php
 invite.html
 invite.css
 invite.js
+send_invite.php
+userlist.php//list of users not in group
