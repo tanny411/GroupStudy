@@ -21,7 +21,8 @@
 			else
 			{
 				//php to php POST request
-				$params = array ('username' => 'tanny411', 'password' => 'aysha','meetingtitle' => $name,'meetingpassword' => $pass);
+				$boardpass = substr(str_shuffle(str_repeat('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',5)),1,6);
+				$params = array ('username' => 'tanny411', 'password' => 'aysha','meetingtitle' => $name,'meetingpassword' => $boardpass);
 
 				$query = http_build_query ($params);
 
@@ -32,8 +33,8 @@
 				$context = stream_context_create (array ( 'http' => $contextData ));
 
 				$boardId =  file_get_contents ('https://www.twiddla.com/API/CreateMeeting.aspx',false,$context);
-
-				$query="insert into groups values('','".$name."','".$desc."','".$time."' , '".$boardId."','".$pass."')";
+				
+				$query="insert into groups values('','".$name."','".$desc."','".$time."' , '".$boardId."','".$pass."','".$boardpass."')";
 				if($query_run=mysqli_query($con,$query)){
 				
 					//setting session, and putting user-group relations

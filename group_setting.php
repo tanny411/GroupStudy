@@ -34,7 +34,7 @@ if(isset($_POST['oldpass']) &&!empty($_POST['oldpass']) && mysqli_real_escape_st
         if(empty($grp_name)) $grp_name=$user[1];
         if(empty($time)) $time=$user[3];
 
-        $query="update groups set name='$grp_name',description='$grp_desc',validity='$time',board_pass='$pass' where id=".$row[0];
+        $query="update groups set name='$grp_name',description='$grp_desc',validity='$time',pass='$pass' where id=".$row[0];
         if(!$query_run=mysqli_query($con,$query)) $msg="<strong style=\"color:red\";>There was a problem. Please try again.</strong>"; 
         else header('Location: grouppage.php');
     }

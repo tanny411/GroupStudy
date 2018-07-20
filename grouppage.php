@@ -17,7 +17,7 @@
 		$row=mysqli_fetch_row($query_run);
 		$group_name=$row[1];
 		$board_id=$row[4];
-		$board_pass=$row[5];
+		$pass=$row[6];
 	}
 	else die('Server Error');
 
@@ -131,7 +131,7 @@
 
 	$str.=dfs("root")."</li>";
 
-	$link="https://www.twiddla.com/api/start.aspx?sessionid=".$board_id."&guestname=".$user[1]."&password=".$board_pass."&hide=invite,profile,url,welcome";
+	$link="https://www.twiddla.com/api/start.aspx?sessionid=".$board_id."&guestname=".$user[1]."&password=".$pass."&hide=invite,profile,url,welcome";
 
 	//NOTIFICATIONS
 	$notif_num="100";

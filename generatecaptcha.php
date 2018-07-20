@@ -13,7 +13,7 @@ imagecolorallocate($image,255,255,255);
 
 $text_color=imagecolorallocate($image,0,0,0);
 
-for($x=1;$x<=300;$x++)
+for($x=1;$x<=200;$x++)
 {
 	$x1=rand(1,200);
 	$x2=rand(1,200);
