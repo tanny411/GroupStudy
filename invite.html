@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GroupStudy</title>
+		<link rel="stylesheet" type="text/css" href="invite.css"/>
+		<script type="text/javascript" src="invite.js"></script>
+	</head>
+	<body>
+		<div class="title">Invite friends to Your Group!</div>
+		<div class="back">
+		<div class="error"><?php  echo $msg; ?></div>
+		<hr>
+		<form action="#" method="POST" enctype="multipart/form-data">
+
+            <div> 
+                Usernames: 
+                <div class="shift">  
+                    <input type="text" class="name" placeholder="type here..."/> 
+                    <div class="tags">
+                        <div class="tag-item">tag-item1<div class="del"> x&nbsp</div></div>
+                        <div class="tag-item">item2</div>
+                    </div>        
+                </div>
+            </div>
+            <div> Invitation message:<textarea class="shift"></textarea> </div>
+            <div> Board Password: <input class="shift" type="password" name='pass' placeholder="Type the current password"/> </div>
+			<div>
+				<input type="button" name="cancel" onclick="redirect('grouppage.php')" value="Cancel"/>
+				<input type="submit" name="send" value="Send Invite"/>
+			</div>
+			
+		</form>
+		</div>
+	</body>
+</html>

@@ -70,3 +70,8 @@ profile.css
 group_setting.php
 group_setting.html
 group_setting.css
+
+invite.php
+invite.html
+invite.css
+invite.js
