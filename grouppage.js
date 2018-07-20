@@ -184,10 +184,16 @@ $(document).ready(function(){
     folderremove(name,pname,document.getElementById('group_id').value);
   });
 
-  $('.notif-btn').on("click",function(){
+  $('.notif-btn').on("click",function(e){
+    e.stopPropagation();
     $('.notifs').toggleClass('notif-collapse');
     $(this).toggleClass('ase');
   });
+
+  $('body').on("click",function(){
+    $('.notifs').addClass('notif-collapse');
+    $('.notif-btn').removeClass('ase');
+	});
 
   notif();
 

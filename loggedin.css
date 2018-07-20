@@ -58,6 +58,7 @@ a, a:visited ,a:hover,a:active {
 }
 .invites{
 	display:inline;
+	margin-left:15px;
 }
 .top-btn
 {
@@ -259,7 +260,7 @@ ul {
 .notifs{
 	width:350px;
 	height:300px;
-	margin:0;
+	margin:5px;
 	padding:7px;
 	background-color: #bcaaccab;
 	box-shadow: 5px 5px 20px rgba(128, 128, 128, 0.527);
@@ -319,6 +320,13 @@ ul {
 }
 #ac:hover,#wa:hover{
 	color:black;
+}
+#ac:focus,#wa:focus{
+	outline:none;
+}
+.notif-collapse{
+    opacity: 0;
+    height:0px;
 }
 
 

@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>GroupStudy</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript" src="loggedin.js"></script>
 		<link rel="stylesheet" type="text/css" href="loggedin.css"/>
 	</head>
@@ -19,17 +20,19 @@
 		</header>
 		<div class="r8">
 			<a href="profile_setting.php?from=main_page.php" class="top-btn setting">Settings</a>
-			<div class="top-btn invites">Invites<div class="notif-num"><?php echo 0/*$notif_num*/; ?></div></div>
+			<div class="top-btn invites">Invites<div class="notif-num"><?php echo $notif_num; ?></div></div>
 			<a href="logout.php" class="top-btn logout">Logout</a>
-			<div id="triangle-up"></div>
+			<div id="triangle-up notif-collapse"></div>
 			<ul class="notifs notif-collapse">
-				<div class="nai" style="display:none"><span>No new notifications</span></div>
-				 <li>
+				<div class="nai"><span>No new notifications</span></div>
+				 <!-- <li>
 					<div class="notif-text"># You have been invited to join the group CSE15<br/>GroupInfo:its an amazing group ilove it, its a full time collaboration.<br/>Message: Ei Aysha eita amader notun group. Come Join</div>
 					<button id="ac">Accept</button>
 					<button id="wa">Decline</button>
-				</li>  
-				<!-- <?php echo $notif_str; ?> -->
+					<div id="inviteid" style="display:none;">id</div>
+					<div id="grpid" style="display:none;">$grpid</div>
+				</li>   -->
+				<?php echo $notif_str; ?>
 			</ul>
 		</div>
 		<div class="btn">

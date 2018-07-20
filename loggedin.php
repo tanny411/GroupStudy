@@ -70,5 +70,31 @@
 		}
 		else $msg="<strong style=\"color:red;\">Please fill in all the fields(Invitations can be skipped)</strong>";
 	}
+	//INVITATIONS
+	$notif_num="";
+	$query="select id,group_id,msg from invites where username='".$user[1]."'";
+	if($query_run=mysqli_query($con,$query)){
+		$notif_num=mysqli_num_rows($query_run);
+		$notif_str="";
+		while($query_row=mysqli_fetch_assoc($query_run)){
+			$id=$query_row['id'];
+			$grpid=$query_row['group_id'];
+			$msg=$query_row['msg'];
+			$query="select name,description from groups where id='".$grpid."'";
+			$query_run2=mysqli_query($con,$query);
+			$query_row2=mysqli_fetch_assoc($query_run2);
+			$desc=$query_row2['description'];
+			$name=$query_row2['name'];
+			///html
+			$notif_str.="<li>
+			<div class=\"notif-text\"># You have been invited to join the group <i><b>\"".$name."\"</b></i><br/>
+			<b>GroupInfo</b>: ".$desc."<br/><b>Message</b>: ".$msg."</div>
+			<button id=\"ac\">Accept</button>
+			<button id=\"wa\">Decline</button>
+			<div id=\"inviteid\" style=\"display:none;\">".$id."</div>
+			<div id=\"grpid\" style=\"display:none;\">".$grpid."</div>
+			</li>";
+		}
+	}
 	include('loggedin_form.php');
 ?>
