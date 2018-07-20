@@ -134,7 +134,7 @@
 	$link="https://www.twiddla.com/api/start.aspx?sessionid=".$board_id."&guestname=".$user[1]."&password=".$pass."&hide=invite,profile,url,welcome";
 
 	//NOTIFICATIONS
-	$notif_num="100";
+	$notif_num="";
 	$query="select id,type,file_id,com_no from notifs where group_id='".$group_id."' and user_id='".$user[0]."'";
 	if($query_run=mysqli_query($con,$query)){
 		$notif_num=mysqli_num_rows($query_run);
