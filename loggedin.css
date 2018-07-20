@@ -51,26 +51,29 @@ a, a:visited ,a:hover,a:active {
     text-decoration: none;
 	color:inherit;
 }
+.r8{
+	position:fixed;
+	top:10px;
+	right:20px;
+}
+.invites{
+	display:inline;
+}
 .top-btn
 {
-	position:fixed;
-	top:5px;
-	padding:1%;
+	padding:3px;
 	border:none;
 	background-color:rgba(0,0,0,0);
 	font-size:30px;
 	text-shadow:0px 1px 1px white; 
-	
+	transition: 300ms;
+ 	border-bottom: 1px solid transparent;
 }
 .top-btn:hover
 {
-	text-shadow:2px 2px 2px gray,2px -2px 1px white;
-}
-.logout{
-	left:90%;
-}
-.setting{
-	left:80%;
+	cursor: pointer;
+	text-shadow:1px 1px 1px gray,1px -1px 1px white;
+	border-color: black;
 }
 .btn
 {

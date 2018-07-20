@@ -17,8 +17,11 @@
 				</div>
 			</div>
 		</header>
-		<a href="profile_setting.php?from=main_page.php" class="top-btn setting">Settings</a>
-		<a href="logout.php" class="top-btn logout">Logout</a>
+		<div class="r8">
+			<a href="profile_setting.php?from=main_page.php" class="top-btn setting">Settings</a>
+			<div class="top-btn invites">Invites</div>
+			<a href="logout.php" class="top-btn logout">Logout</a>
+		</div>
 		<div class="btn">
 			<div class="a"><input type="button" onclick="oldgroup();" class="oldgroup" value="Enter existing group"/></div>
 			<div class="b">
