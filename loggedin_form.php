@@ -43,7 +43,7 @@
 					
 					<form action="<?php echo $current_file; ?>" method="POST" class="newform">
 					
-					<div class="grpname newtxt"> Group Name: <input type="text" name='grp_name' class="newinp" placeholder="Name your group"/> </div>
+					<div class="grpname newtxt"> Group Name: <input type="text" name='grp_name' class="newinp" placeholder="Name your group" maxlength="20"/> </div>
 					<div class="about newtxt">Group Description:<textarea name="grp_desc" placeholder="Tell us what your group is about" class="newinp newtextarea"><?php if(isset($desc) && !empty($desc)) echo $desc; ?></textarea> </div>
 					<div class="grouppass newtxt"> Group Password: <input type="password" name='pass' class="newinp" placeholder="Share ONLY with group Admins"/> </div>
 					<div class="time newtxt">Group Expiration:

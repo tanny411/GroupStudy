@@ -45,12 +45,11 @@ a, a:visited ,a:hover,a:active {
     color:#7f9ba7;
     list-style-type: none;
     padding-left:0px;
-    margin-top: 0px;
     margin-bottom: 0px;
 
     font-size: 1.25em;
     
-    margin-top:25px;
+    margin-top:5px;
 }
 .navbar li{
     display: inline;
@@ -62,16 +61,28 @@ a, a:visited ,a:hover,a:active {
     background-color: #557c8d;
 }
 .name-pic{
-    position:absolute;
+    position: absolute;
     display: flex;
     top:7%;
     right:3%;
 }
-.username{
+.username, .grouptitle{
     color:white;
-    font-size:3em;
-    font-family: 'Bad Script', cursive;
+    font-size:25px;
+    font-family: 'Englebert', sans-serif;
     text-align:left;
+    padding-left: 10px;
+}
+.grouptitle span{
+    font-size:25px;
+    opacity: .8;
+}
+.grouptitle{
+    font-size:50px;
+}
+.stuff{
+    position: relative;
+    bottom:-5px;
 }
 .pp
 {

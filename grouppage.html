@@ -2,8 +2,7 @@
     <head>
         <title>GroupStudy</title>
         <!--<script type="text/javascript" src="loggedin.js"></script>-->
-        <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="grouppage.css"/>
+        <link href="http://fonts.googleapis.com/css?family=Englebert|Open+Sans:400,600,700" rel="stylesheet" type="text/css">        <link rel="stylesheet" type="text/css" href="grouppage.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="grouppage.js"></script>
@@ -15,34 +14,35 @@
             </div>
             <div class="searcharea"><i class="fa fa-search"></i><input type="text" id="searchfiles" placeholder="Search by filename/tag/type"/></div>
             <div class="name-pic">
-            <div>
-            <div class="username">
-                Hi, <a href="profile.php?user=<?php echo $user[1];?>"><?php echo "$user[2] $user[3]"; ?></a>
-            </div>
-            <ul class="navbar">
-                <li><a href="offline.php?next=main_page">Home</a></li>
-                <li><a href="group_setting.php">Settings</a></li>
-                <li class="notif-btn">Notification<div class="notif-num"><?php echo $notif_num; ?></div></li>
-                <li><a href="offline.php?next=logout">Logout</a></li>
-            </ul>
-            <div class="notifs notif-collapse">
-                <div class="clearall">Clear Notifications</div>
-                <ul class="notif-list">
-                    <div class="nai"><span>No new notifications</span></div>
-                    <!-- <li>
-                        <div class="notif-del">x</div>\
-                        <a href="#>
-                        <div class="notif-head "># <b>4</b> New post from <b>Aysha</b></div>
-                        <div class="notif-text">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...<br/> in root</div>
-                        </a>
-                        <div class="notif-type">post</div>
-                        <div class="notif-id">id</div>
-                    </li>  -->
-                    <?php echo $notif_str; ?>
-                </ul>
-            </div>
-            </div>
-            <img src=<?php echo 'pp/'.$user[11] ?> class="pp"/>
+                <div class="stuff">
+                    <div class="username">
+                        Hi, <a href="profile.php?user=<?php echo $user[1];?>"><?php echo "$user[2] $user[3]"; ?></a>
+                    </div>
+                    <div class="grouptitle"><span>Welcome to&nbsp&nbsp</span><?php echo $group_name; ?></div>
+                    <ul class="navbar">
+                        <li><a href="offline.php?next=main_page">Home</a></li>
+                        <li><a href="group_setting.php">Settings</a></li>
+                        <li class="notif-btn">Notification<div class="notif-num"><?php echo $notif_num; ?></div></li>
+                        <li><a href="offline.php?next=logout">Logout</a></li>
+                    </ul>
+                    <div class="notifs notif-collapse">
+                        <div class="clearall">Clear Notifications</div>
+                        <ul class="notif-list">
+                            <div class="nai"><span>No new notifications</span></div>
+                            <!-- <li>
+                                <div class="notif-del">x</div>\
+                                <a href="#>
+                                <div class="notif-head "># <b>4</b> New post from <b>Aysha</b></div>
+                                <div class="notif-text">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...<br/> in root</div>
+                                </a>
+                                <div class="notif-type">post</div>
+                                <div class="notif-id">id</div>
+                            </li>  -->
+                            <?php echo $notif_str; ?>
+                        </ul>
+                    </div>
+                </div>
+                <img src=<?php echo 'pp/'.$user[11] ?> class="pp"/>
             </div>
             
         </div>
