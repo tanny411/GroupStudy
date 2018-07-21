@@ -3,12 +3,11 @@
 	
 	$msg="Fill these out and click OK to create a new group";
 	
-	if(isset($_POST['grp_name']) && isset($_POST['grp_desc']) && isset($_POST['time']) && isset($_POST['users']) && isset($_POST['emails']) && isset($_POST['pass']))
+	if(isset($_POST['grp_name']) && isset($_POST['grp_desc']) && isset($_POST['time']) && isset($_POST['emails']) && isset($_POST['pass']))
 	{
 		$name=mysqli_real_escape_string($con,$_POST['grp_name']);
 		$desc=mysqli_real_escape_string($con,$_POST['grp_desc']);
 		$time=$_POST['time'];
-		$users=mysqli_real_escape_string($con,$_POST['users']);
 		$pass=mysqli_real_escape_string($con,$_POST['pass']);
 		$emails=$_POST['emails'];
 		
@@ -45,11 +44,6 @@
 						$id=$row[0];
 						$query="insert into user_group values ('".$user[0]."','".$id."',0)";
 						$query_run=mysqli_query($con,$query);
-
-						//inviting others
-							//direct invitation my DIRECT messages NOT DONE
-						$users_ara=explode(',',$users);
-						//foreach($users_ara as $ele) echo $ele.'<br/>';
 
 						//mailing users
 							//Verfication on entering NOT DONE

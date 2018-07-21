@@ -78,7 +78,6 @@
 							<option value="12">12 Months</option>
 						</select>
 					</div>
-					<div class="invite newtxt">Invite users:<input type="text" name="users" placeholder="Type names separated by comma" class="newinp"  value="<?php if(isset($users) && !empty($users)) echo $users; ?>"/></div>
 					<div class="mail newtxt">Invite by email:<input type="text" name="emails" placeholder="Valid comma separated Emails" class="newinp"  value="<?php if(isset($emails) && !empty($emails)) echo $emails; ?>"/></div>
 					
 					<input type="submit" name="newok" class="newok" value="OK"/>

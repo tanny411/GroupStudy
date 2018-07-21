@@ -19,6 +19,13 @@ $(document).ready(function(){
             }
         };
         xhr.send("pass="+pass+"&msg="+msg+"&tag="+tag);
+
+        $("#pass").val("");
+        $("#msg").val("");
+        $(".name").val("");
+        $(".tags").empty();
+        $(".list").empty();
+        $(".list").addClass('hide');
     });
 
     $(document).on("click",".del",function(){
