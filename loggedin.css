@@ -265,6 +265,7 @@ ul {
 	background-color: #bcaaccab;
 	box-shadow: 5px 5px 20px rgba(128, 128, 128, 0.527);
 	overflow-x: scroll;
+	transition: 300ms;
 }
 .notifs li{
     color:black;

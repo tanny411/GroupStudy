@@ -83,6 +83,8 @@ input[type=button]:hover{
 	background-color: #81c6ff81;
 	padding:4px;
 	border-radius:10px;
+	margin-left:5px;
+	margin-top:5px;
 }
 .value{
 	display:inline;
@@ -99,4 +101,31 @@ input[type=button]:hover{
 .sent{
 	font-size: 20px;
 	text-shadow: 1px -1px 0px rgb(21, 189, 133),2px -2px 0px rgb(21, 189, 133);
+}
+.list{
+	width:20%;
+	height:auto;
+	background-color: rgba(78, 146, 173, 0.945);
+	position: fixed;
+	text-shadow: none;
+	z-index: 2;
+	margin-top:5px;
+	padding:5px;
+	list-style: none;
+	font-size: 14px;
+}
+.list li{
+	padding:5px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.596);
+}
+.list li:hover{
+	background-color:  rgba(33, 100, 121, 0.568);
+	cursor: pointer;
+}
+.nai{
+	color:rgba(255, 255, 255, 0.541);
+	border:none !important;
+}
+.hide{
+	display:none;
 }
