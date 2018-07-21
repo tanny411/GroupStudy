@@ -15,9 +15,9 @@
 
 			<div> Group Name: <input type="text" name='grp_name' value="<?php echo $row[1]; ?>" readonly/> </div>
             <div> Group Description:<textarea name="grp_desc"><?php echo $row[2]; ?></textarea> </div>
-            <div> New Board Password: <input type="password" name='pass' placeholder="Type the new password"/> </div>
-            <div> Confirm Board Password: <input type="password" name='repeatpass' placeholder="Confirm new password"/> </div>
-            <div> Current Board Password: <input type="password" name='oldpass' placeholder="Type the old/current password"/> </div>
+            <div> New Group Password: <input type="password" name='pass' placeholder="Type the new password"/> </div>
+            <div> Confirm Group Password: <input type="password" name='repeatpass' placeholder="Confirm new password"/> </div>
+            <div> Current Group Password: <input type="password" name='oldpass' placeholder="Type the old/current password"/> </div>
             <div>Group Expiration:
                 <select name="time">
                     <option value="1" <?php echo($row[3]==1?'selected':''); ?> >1 Month</option>

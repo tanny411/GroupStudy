@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 require('connect.inc.php');
-$ret='Invite Sent! ^_^ Want to invite more people?';
+$ret='<span class="sent">Invite Sent! ^_^ Want to invite more people?</span>';
 if(isset($_POST['pass'])&&isset($_POST['msg'])&&isset($_POST['tag'])){
     if(!empty($_POST['pass'])&&!empty($_POST['tag'])){
         
