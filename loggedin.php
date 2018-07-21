@@ -83,12 +83,12 @@
 			$query="select name,description from groups where id='".$grpid."'";
 			$query_run2=mysqli_query($con,$query);
 			$query_row2=mysqli_fetch_assoc($query_run2);
-			$desc=$query_row2['description'];
+			$des=$query_row2['description'];
 			$name=$query_row2['name'];
 			///html
 			$notif_str.="<li>
 			<div class=\"notif-text\"># You have been invited to join the group <i><b>\"".$name."\"</b></i><br/>
-			<b>GroupInfo</b>: ".$desc."<br/><b>Message</b>: ".$msg."</div>
+			<b>GroupInfo</b>: ".$des."<br/><b>Message</b>: ".$msg."</div>
 			<button id=\"ac\">Accept</button>
 			<button id=\"wa\">Decline</button>
 			<div id=\"inviteid\" style=\"display:none;\">".$id."</div>
