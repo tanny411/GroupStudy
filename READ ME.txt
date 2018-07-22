@@ -80,3 +80,5 @@ userlist.php//list of users not in group
 
 deleteinvite.php
 add_to_grp.php
+
+remove_user.php

@@ -64,18 +64,23 @@
 			if($query_run2=mysqli_query($con,$query)){
 				while($query_row2=mysqli_fetch_assoc($query_run2)){
 					
+					if(array_key_exists($query_row2['user_id'],$allusers)) $nm=$allusers[$query_row2['user_id']];
+					else $nm="<i>Removed user</i>";
 					$query_row2['comment']=nl2br($query_row2['comment']);
 					$comments.="<div class=\"comment-box\" id=\"com_".$query_row2['id']."\">";
 					if($user[0]==$query_row2['user_id']) $comments.="<div class=\"com-cross\">X</div>";
-					$comments.="<h4 class=\"author\">".$allusers[$query_row2['user_id']]."</h4><div class=\"time\">".$query_row2['timestamp']."</div>".$query_row2['comment']."</div>";
+					$comments.="<h4 class=\"author\">".$nm."</h4><div class=\"time\">".$query_row2['timestamp']."</div>".$query_row2['comment']."</div>";
 				}
 			} else die('Server Error');
 
 			$query_row['post']=nl2br($query_row['post']);
 
+			if(array_key_exists($query_row['user_id'],$allusers)) $nm=$allusers[$query_row['user_id']];
+			else $nm="<i>Removed user</i>";
+
 			$feed.="<span class=\"anchor\" id=\"jump_".$query_row['id']."\"></span><div class=\"apost\" id='".$query_row['id']."'>";
 			if($user[0]==$query_row['user_id'])$feed.="<div class=\"cross\">X</div>";
-			$feed.="<h3 class=\"author\">".$allusers[$query_row['user_id']]."</h3>
+			$feed.="<h3 class=\"author\">".$nm."</h3>
 			<div class=\"time\">".$query_row['timestamp']."</div>
 			<div class=\"aposttext\">".$query_row['post']."</div>
 			<div class=\"commentbtn\">comment</div>

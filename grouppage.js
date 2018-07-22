@@ -511,4 +511,22 @@ window.onload = function () {
 
     xhr.send(formData);
   }
+
+  document.getElementsByClassName('leave')[0].onclick=function(){
+    var pass = prompt("Are you sure you want to leave this group?\nYou can't access any files or posts of this group if you leave.\nEnter password to leave:", "");
+    if (pass == null || pass == "") {
+        return;
+    }
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'remove_user.php', true);
+    xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      var x=xhr.responseText;
+      if(x!=0) alert(x);
+      else location.href = "main_page.php";
+    }
+    };
+    xhr.send("pass="+pass);
+  };
 };
