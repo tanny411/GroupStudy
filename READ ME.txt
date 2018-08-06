@@ -82,3 +82,6 @@ deleteinvite.php
 add_to_grp.php
 
 remove_user.php
+
+timeout.html
+timeout.js
