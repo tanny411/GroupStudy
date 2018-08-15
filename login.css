@@ -67,3 +67,10 @@ input[type=submit]:hover {
 	color:red;
 	font-weight:bold;
 }
+.welcome{
+	font-size: 80px ;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	margin-top:100px;
+	color: rgb(0, 0, 0);
+	text-decoration: underline rgba(3, 90, 172, 0.322);
+}

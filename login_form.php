@@ -5,6 +5,7 @@
 	</head>
 	<body>
 	<img src="backL.jpg"/>
+	<center class="welcome">Welcome to GroupStudy</center>
 	<div class="back">
 		<div class="error"><?php echo $msg; ?></div>
 		<form action="<?php $current_file; ?>" method="POST">
