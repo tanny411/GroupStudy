@@ -23,6 +23,6 @@ for($x=1;$x<=200;$x++)
 	imageline($image,$x1,$y1,$x2,$y2,$text_color);
 }
 
-imagettftext($image,$font_size,0,20,42,$text_color,'C:\xampp\htdocs\GroupStudy\GroupProject\font.ttf',$text);
+imagettftext($image,$font_size,0,20,42,$text_color,'C:\xampp\htdocs\GroupProject\font.ttf',$text);
 imagejpeg($image);
 ?>

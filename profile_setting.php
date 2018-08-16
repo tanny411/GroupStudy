@@ -51,10 +51,10 @@ if(isset($_POST['oldpass']) &&!empty($_POST['oldpass']) && md5(mysqli_real_escap
         ///make image smaller before saving
         if (isset($_FILES['pp']) && !empty($_FILES['pp']) && !empty($_FILES['pp']['name'])){
             $pp= basename($_FILES['pp']['name']);
-            $target_file = "C:/xampp/htdocs/GroupStudy/GroupProject/pp/" . $pp;
+            $target_file = "C:/xampp/htdocs/GroupProject/pp/" . $pp;
             $ext=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
             $pp=$user[1].'.'.$ext;
-            $target_file = "C:/xampp/htdocs/GroupStudy/GroupProject/pp/" . $pp;
+            $target_file = "C:/xampp/htdocs/GroupProject/pp/" . $pp;
             if( is_uploaded_file($_FILES['pp']['tmp_name']) && $_FILES['pp']['error'] == UPLOAD_ERR_OK && move_uploaded_file($_FILES["pp"]["tmp_name"], $target_file)) ;
             else $pp="defaultpp.jpg";
         }

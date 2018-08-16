@@ -26,7 +26,7 @@ if(isset($_POST['task']) && $_POST['task']=='addpost' )
     if (isset($_FILES['file']) && !empty($_FILES['file']) && !empty($_FILES['file']['name']))
     {
         $file= $_FILES['file']['name'];
-        $target_file = "C:/xampp/htdocs/GroupStudy/GroupProject/files/" .$groupid.'_'. basename($file);
+        $target_file = "C:/xampp/htdocs/GroupProject/files/" .$groupid.'_'. basename($file);
         $ext=strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         
         //echo $file;
@@ -125,6 +125,6 @@ if(isset($_POST['task']) && $_POST['task']=='addpost' )
             else echo $msg;
         }
 }
-else header('location: /groupstudy/groupproject/grouppage.php');
+else header('location: /groupproject/grouppage.php');
 
 ?>

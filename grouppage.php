@@ -4,7 +4,7 @@
 	
 	$user=getUser();
 	if(isset($_SESSION['group_id']) && !empty($_SESSION['group_id'])) $group_id=$_SESSION['group_id'];
-	else header('location: /groupstudy/groupproject/main_page.php');
+	else header('location: /groupproject/main_page.php');
 
 	//setting as online
 	$query="update user_group set offline='0' where user_id='".$_SESSION['user_id']."' and group_id='".$_SESSION['group_id']."'";
