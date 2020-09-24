@@ -14,7 +14,7 @@ if(isset($_POST['id']) && !empty($_POST['id'])){
     $groupid=$row[1];
     
     if($file!=""){
-        $yes=@unlink('C:/xampp/htdocs/GroupProject/files/'.$groupid.'_'.$file);
+        $yes=@unlink('/opt/lampp/htdocs/GroupProject/files/'.$groupid.'_'.$file);
         if($yes==false) die('Server Error. Post could not be deleted');
     }
     

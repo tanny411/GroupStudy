@@ -19,6 +19,8 @@ This app was built with a PHP backend and pure HTML, CSS, JS based front-end.
 - Go to `Import`, click `choose file` and select the `setting files/groupstudy.sql` file. Click `Go`. The database should be set up. Some dummy data fills the database, if you want you can clear all the tables.
 ### Set file path
 - If you are not running from linux, in `GroupStudy/generatecaptcha.php` change the path towards the end of the file to the proper location of the GroupStudy folder.
+- Similarly in two places in `register.php`, on place in `deletepost.php`, `addpost.php`, and `profile_setting.php`.
+- 
 ### Run
 - Run `localhost/GroupStudy/main_page.php` from browser and Enjoy!
 
