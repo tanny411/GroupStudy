@@ -28,6 +28,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `chat`
 --
 
+USE groupstudy;
+
 CREATE TABLE `chat` (
   `id` int(11) NOT NULL,
   `group_id` int(11) NOT NULL,
