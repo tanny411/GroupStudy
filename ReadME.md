@@ -13,16 +13,11 @@ Features include:
 
 This app was built with a PHP backend and pure HTML, CSS, JS based front-end. 
 
-# Demo
-
-## Register
-![register_demo_gif](https://j.gifs.com/81J8rW.gif)
-
-## Features
-
-## Get invites to groups
-
-## Get group notifications
+## Demo
+- [Register](https://www.youtube.com/watch?v=jmvkVRitxGI)
+- [Features](https://www.youtube.com/watch?v=-dZclUhaPI8)
+- [Get group notifications](https://www.youtube.com/watch?v=u3lqJcBFpGM)
+- [Get invited to groups](https://www.youtube.com/watch?v=LiuaIhtUcpQ)
 
 
 ## Run Project
