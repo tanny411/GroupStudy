@@ -13,11 +13,23 @@ Features include:
 
 This app was built with a PHP backend and pure HTML, CSS, JS based front-end. 
 
+# Demo
+
+## Register
+<iframe src='//gifs.com/embed/register-81J8rW' frameborder='0' scrolling='no' width='1000px' height='400px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);' ></iframe>
+
+## Features
+
+## Get invites to groups
+
+## Get group notifications
+
+
 ## Run Project
 
 ### Server
 - Install XAMPP.
-- Open and run Apache and MySQL by `sudo ./opt/lampp/manager-linux-x64.run`. Start Apache and MySQL.
+- Open and run Apache and MySQL by `sudo /opt/lampp/manager-linux-x64.run`. Start Apache and MySQL.
 - In `xampp/htdocs/` clone this repository.
 ### Database
 - Open `localhost/phpmyadmin` in browser and create a database called `groupstudy`.
