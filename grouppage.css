@@ -73,12 +73,13 @@ a, a:visited ,a:hover,a:active {
     text-align:left;
     padding-left: 10px;
 }
+.grouptitle{
+    font-size:50px;
+    text-align:right;
+}
 .grouptitle span{
     font-size:25px;
     opacity: .8;
-}
-.grouptitle{
-    font-size:50px;
 }
 .stuff{
     position: relative;
